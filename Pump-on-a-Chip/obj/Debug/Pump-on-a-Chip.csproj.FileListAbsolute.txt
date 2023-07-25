@@ -1,0 +1,12 @@
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Debug\Pump-on-a-Chip.exe.config
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Debug\Pump-on-a-Chip.exe
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Debug\Pump-on-a-Chip.pdb
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Debug\MaterialSkin.dll
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.csproj.AssemblyReference.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.csproj.SuggestedBindingRedirects.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump_on_a_Chip.Properties.Resources.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.csproj.GenerateResource.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.csproj.CoreCompileInputs.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.csproj.CopyComplete
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.exe
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.pdb
