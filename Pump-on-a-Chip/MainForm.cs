@@ -7,26 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace Pump_on_a_Chip
 {
-    public partial class MainForm : MaterialForm
+    public partial class MainForm : Form
     {
+
         public MainForm()
         {
             InitializeComponent();
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            dateLabel.Text = DateTime.Now.ToShortDateString();
+            timeLabel.Text = DateTime.Now.ToShortTimeString();
+        }
+
+
+
     }
 }
