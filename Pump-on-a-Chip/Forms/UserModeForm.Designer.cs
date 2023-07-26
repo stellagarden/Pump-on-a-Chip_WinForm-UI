@@ -302,7 +302,7 @@
         private RoundControl roundControl3;
         private System.Windows.Forms.Panel operatingTimePanel;
         private RoundControl roundControl2;
-        private System.Windows.Forms.Timer operatingTimer;
+        public System.Windows.Forms.Timer operatingTimer;
         public System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label pCellLabel;
         private System.Windows.Forms.Label flowrateLabel;

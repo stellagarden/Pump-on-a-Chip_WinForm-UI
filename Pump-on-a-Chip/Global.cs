@@ -8,8 +8,10 @@ namespace Pump_on_a_Chip
 {
     internal class Global
     {
-        public static string Pat;
-        public static float cellP;
-        public static float flowrate;
+        public static double atP;
+        public static double resP;
+        public static double cellP;
+        public static double flowrate;
+        public static double prop_valve;
     }
 }

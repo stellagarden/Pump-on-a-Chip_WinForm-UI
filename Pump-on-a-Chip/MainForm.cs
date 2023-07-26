@@ -88,8 +88,19 @@ namespace Pump_on_a_Chip
             {
                 case 'R':
                     userModeForm.Ready();
-                    Global.Pat = data.Substring(1,data.Length-1);
-                    //userModeForm.pCellLabel.Text = Global.Pat;
+                    Global.atP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    break;
+                case 'P':
+                    Global.resP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    break;
+                case 'C':
+                    Global.cellP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    break;
+                case 'F':
+                    Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    break;
+                case 'V':
+                    Global.prop_valve = Convert.ToDouble(data.Substring(1, data.Length - 1));
                     break;
                 case 'S':
                     switch (data[1])
@@ -102,6 +113,7 @@ namespace Pump_on_a_Chip
                             break;
                         case '4':
                             userModeForm.statusLabel.Text = "FINISH";
+                            userModeForm.operatingTimer.Stop();
                             break;
                         case '0':
                             userModeForm.statusLabel.Text = "READY";
