@@ -11,6 +11,8 @@ using System.Runtime.InteropServices;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO.Ports;
+using Pump_on_a_Chip.Forms;
+using System.Xml.Linq;
 
 namespace Pump_on_a_Chip
 {
@@ -18,6 +20,10 @@ namespace Pump_on_a_Chip
     {
         private DateTime operation_start;
         public delegate void serialDelegate(string data);
+        private Form activeForm;
+        private UserModeForm userModeForm = new UserModeForm();
+        private AdminModeForm adminModeForm = new AdminModeForm();
+        public static SerialPort serial = new SerialPort();
 
         public MainForm()
         {
@@ -29,32 +35,22 @@ namespace Pump_on_a_Chip
         private void MainForm_Load(object sender, EventArgs e)
         {
             globalTimer.Start();
-            // State - Initializing
-            statusLabel.Text = "INITIALIZING";
-            operatingTimeLabel.Text = "--:--:--";
-            pCellLabel.Text = "-";
-            flowrateLabel.Text = "-";
-            startButton.Enabled = false;
-            startButton.BackColor = Color.FromArgb(213, 213, 213);
-            startButton.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellTargetTextLabel.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellTargetLabel.Text = (200 + 2 * pCellSlider.Value).ToString() + " mbar";
-            pCellTargetLabel.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellSlider.Enabled = false;
-            adminModeButton.Enabled = false;
+            OpenChildForm(userModeForm, sender);    
             // Arduino
             try
             {
-                serialPort1.PortName = "COM3";
-                serialPort1.BaudRate = 9600;
-                serialPort1.DtrEnable = true;
-                serialPort1.Open();
-                serialPort1.ReadExisting();
+                serial.PortName = "COM6";
+                serial.BaudRate = 9600;
+                serial.DtrEnable = true;
+                serial.Open();
+                serial.ReadExisting();
+                serial.DataReceived += serial_DataReceived;
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK);
             }
+            serial.Write("I");
         }
 
         private void globalTimer_Tick(object sender, EventArgs e)
@@ -63,43 +59,57 @@ namespace Pump_on_a_Chip
             timeLabel.Text = DateTime.Now.ToShortTimeString();
         }
 
-        private void pCellSlider_onValueChanged(object sender, int newValue)
+        private void OpenChildForm(Form childForm, object btnSender)
         {
-            // Slider value's range: 200 ~ 400 mbar
-            pCellTargetLabel.Text = (200 + 2 * pCellSlider.Value).ToString() + " mbar";
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            this.desktopPanel.Controls.Add(childForm);
+            this.desktopPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            operation_start = DateTime.Now;
-            operatingTimer.Start();
-            serialPort1.Write("S");
-
-            // Disable input when it starts
-            startButton.Enabled = false;
-            startButton.BackColor = Color.FromArgb(213, 213, 213);
-            startButton.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellTargetTextLabel.ForeColor = Color.FromArgb(0, 48, 73);
-            pCellTargetLabel.ForeColor = Color.FromArgb(0, 48, 73);
-            pCellSlider.Enabled = false;
-            adminModeButton.Enabled = false;
-        }
-
-        private void operatingTimer_Tick_1(object sender, EventArgs e)
-        {
-            TimeSpan duration = DateTime.Now - operation_start;
-            operatingTimeLabel.Text = string.Format("{0:hh\\:mm\\:ss}", duration);
-        }
-
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            string data = serialPort1.ReadLine();
+            string data = serial.ReadLine();
             this.Invoke(new serialDelegate(dataProcess), data);
         }
 
         private void dataProcess(string data)
         {
-            pCellLabel.Text = data;
+            Console.Write("Received: "+data);
+            switch (data[0])
+            {
+                case 'R':
+                    userModeForm.Ready();
+                    Global.Pat = data.Substring(1,data.Length-1);
+                    //userModeForm.pCellLabel.Text = Global.Pat;
+                    break;
+                case 'S':
+                    switch (data[1])
+                    {
+                        case '2':
+                            userModeForm.statusLabel.Text = "PRESSURIZING";
+                            break;
+                        case '3':
+                            userModeForm.statusLabel.Text = "RUNNING";
+                            break;
+                        case '4':
+                            userModeForm.statusLabel.Text = "FINISH";
+                            break;
+                        case '0':
+                            userModeForm.statusLabel.Text = "READY";
+                            userModeForm.Ready();
+                            break;
+                    }
+                    break;
+
+            }
         }
     }
 }

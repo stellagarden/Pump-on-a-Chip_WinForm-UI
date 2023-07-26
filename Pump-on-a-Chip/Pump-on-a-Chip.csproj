@@ -51,6 +51,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\GraphicsExtension.cs" />
+    <Compile Include="Forms\AdminModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminModeForm.Designer.cs">
+      <DependentUpon>AdminModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserModeForm.Designer.cs">
+      <DependentUpon>UserModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +81,12 @@
     <Compile Include="RoundControl.Designer.cs">
       <DependentUpon>RoundControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AdminModeForm.resx">
+      <DependentUpon>AdminModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserModeForm.resx">
+      <DependentUpon>UserModeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

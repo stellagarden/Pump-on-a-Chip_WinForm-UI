@@ -12,3 +12,5 @@ E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-C
 E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump-on-a-Chip.pdb
 E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump_on_a_Chip.MainForm.resources
 E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump_on_a_Chip.RoundControl.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump_on_a_Chip.Forms.UserModeForm.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Debug\Pump_on_a_Chip.Forms.AdminModeForm.resources
