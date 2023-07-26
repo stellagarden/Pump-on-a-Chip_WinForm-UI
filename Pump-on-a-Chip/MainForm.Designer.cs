@@ -51,6 +51,7 @@
             this.adminModeButton = new System.Windows.Forms.Button();
             this.operatingTimer = new System.Windows.Forms.Timer(this.components);
             this.statusBarPanel = new System.Windows.Forms.Panel();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // globalTimer
@@ -294,8 +295,12 @@
             this.statusBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.statusBarPanel.Location = new System.Drawing.Point(0, 0);
             this.statusBarPanel.Name = "statusBarPanel";
-            this.statusBarPanel.Size = new System.Drawing.Size(575, 42);
+            this.statusBarPanel.Size = new System.Drawing.Size(578, 42);
             this.statusBarPanel.TabIndex = 23;
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // MainForm
             // 
@@ -358,6 +363,7 @@
         private System.Windows.Forms.Button adminModeButton;
         private System.Windows.Forms.Timer operatingTimer;
         private System.Windows.Forms.Panel statusBarPanel;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
