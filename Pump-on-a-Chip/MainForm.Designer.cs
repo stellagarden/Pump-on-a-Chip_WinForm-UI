@@ -103,9 +103,9 @@
         #endregion
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.Panel desktopPanel;
         private System.Windows.Forms.Timer globalTimer;
         private System.Windows.Forms.Panel topPanel;
+        public System.Windows.Forms.Panel desktopPanel;
     }
 }
 

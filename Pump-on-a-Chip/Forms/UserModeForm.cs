@@ -17,6 +17,7 @@ namespace Pump_on_a_Chip.Forms
     public partial class UserModeForm : Form
     {
         private DateTime operation_start;
+        public static MainForm mainForm;
 
         public UserModeForm()
         {
@@ -75,7 +76,7 @@ namespace Pump_on_a_Chip.Forms
 
         private void serialWrite(string args)
         {
-            MainForm.serial.Write(args);
+            mainForm.serial.Write(args);
             Console.WriteLine("Send: "+args);
         }
 
@@ -106,5 +107,9 @@ namespace Pump_on_a_Chip.Forms
             operatingTimeLabel.Text = string.Format("{0:hh\\:mm\\:ss}", duration);
         }
 
+        private void adminModeButton_Click(object sender, EventArgs e)
+        {
+            mainForm.changeToAdmin();
+        }
     }
 }

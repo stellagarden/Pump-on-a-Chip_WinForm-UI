@@ -72,6 +72,7 @@
             this.adminModeButton.TabIndex = 39;
             this.adminModeButton.Text = "Administrator Mode";
             this.adminModeButton.UseVisualStyleBackColor = true;
+            this.adminModeButton.Click += new System.EventHandler(this.adminModeButton_Click);
             // 
             // pCellTargetLabel
             // 

@@ -23,19 +23,20 @@ namespace Pump_on_a_Chip
         private Form activeForm;
         private UserModeForm userModeForm = new UserModeForm();
         private AdminModeForm adminModeForm = new AdminModeForm();
-        public static SerialPort serial = new SerialPort();
+        public SerialPort serial = new SerialPort();
 
         public MainForm()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.LightBlue100, TextShade.WHITE);
+            UserModeForm.mainForm = this;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             globalTimer.Start();
-            OpenChildForm(userModeForm, sender);    
+            OpenChildForm(userModeForm);
             // Arduino
             try
             {
@@ -45,12 +46,12 @@ namespace Pump_on_a_Chip
                 serial.Open();
                 serial.ReadExisting();
                 serial.DataReceived += serial_DataReceived;
+                serial.Write("I");
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK);
             }
-            serial.Write("I");
         }
 
         private void globalTimer_Tick(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace Pump_on_a_Chip
             timeLabel.Text = DateTime.Now.ToShortTimeString();
         }
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
             {
@@ -110,6 +111,11 @@ namespace Pump_on_a_Chip
                     break;
 
             }
+        }
+
+        public void changeToAdmin()
+        {
+            OpenChildForm(adminModeForm);
         }
     }
 }
