@@ -69,7 +69,8 @@ namespace Pump_on_a_Chip.Forms
         private void pCellSlider_onValueChanged(object sender, int newValue)
         {
             // Slider value's range: 200 ~ 400 mbar
-            pCellTargetLabel.Text = (200 + 2 * pCellSlider.Value).ToString() + " mbar";
+            Global.cellP_target = 200 + 2 * pCellSlider.Value;
+            pCellTargetLabel.Text = Global.cellP_target.ToString() + " mbar";
         }
 
         private void serialWrite(string args)
@@ -83,7 +84,7 @@ namespace Pump_on_a_Chip.Forms
             operation_start = DateTime.Now;
             operatingTimer.Start();
             statusLabel.Text = "CELL LOADING";
-            serialWrite("S"+ (200 + 2 * pCellSlider.Value).ToString());
+            serialWrite("S"+ Global.cellP_target.ToString());
 
             // Disable input and change colors when it starts
             statusLabel.BackColor = Color.FromArgb(214, 40, 40);

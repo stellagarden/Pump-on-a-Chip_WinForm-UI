@@ -20,7 +20,6 @@ namespace Pump_on_a_Chip
     {
         private DateTime operation_start;
         public delegate void serialDelegate(string data);
-        private Form activeForm;
         private UserModeForm userModeForm = new UserModeForm();
         private AdminModeForm adminModeForm = new AdminModeForm();
         public SerialPort serial = new SerialPort();
@@ -31,12 +30,18 @@ namespace Pump_on_a_Chip
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.LightBlue100, TextShade.WHITE);
             UserModeForm.mainForm = this;
+            AdminModeForm.mainForm = this;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             globalTimer.Start();
-            OpenChildForm(userModeForm);
+            userModeForm.TopLevel = false;
+            userModeForm.FormBorderStyle = FormBorderStyle.None;
+            this.desktopPanel.Controls.Add(userModeForm);
+            this.desktopPanel.Tag = userModeForm;
+            userModeForm.BringToFront();
+            userModeForm.Show();
             // Arduino
             try
             {
@@ -58,21 +63,6 @@ namespace Pump_on_a_Chip
         {
             dateLabel.Text = DateTime.Now.ToShortDateString();
             timeLabel.Text = DateTime.Now.ToShortTimeString();
-        }
-
-        public void OpenChildForm(Form childForm)
-        {
-            if (activeForm != null)
-            {
-                activeForm.Close();
-            }
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            this.desktopPanel.Controls.Add(childForm);
-            this.desktopPanel.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
         }
 
         private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -127,7 +117,33 @@ namespace Pump_on_a_Chip
 
         public void changeToAdmin()
         {
-            OpenChildForm(adminModeForm);
+            adminModeForm.TopLevel = false;
+            adminModeForm.FormBorderStyle = FormBorderStyle.None;
+            this.desktopPanel.Controls.Add(adminModeForm);
+            this.desktopPanel.Tag = adminModeForm;
+            adminModeForm.BringToFront();
+            adminModeForm.Show();
+            topPanel.BackColor = Color.FromArgb(45, 57, 71);
+            dateLabel.BackColor = Color.FromArgb(45, 57, 71);
+            timeLabel.BackColor = Color.FromArgb(45, 57, 71);
+            dateLabel.ForeColor = Color.FromArgb(217, 217, 217);
+            timeLabel.ForeColor = Color.FromArgb(217, 217, 217);
+        }
+
+        public void changeToUser()
+        {
+            userModeForm.TopLevel = false;
+            userModeForm.FormBorderStyle = FormBorderStyle.None;
+            this.desktopPanel.Controls.Add(userModeForm);
+            this.desktopPanel.Tag = userModeForm;
+            userModeForm.BringToFront();
+            userModeForm.Show();
+            topPanel.BackColor = Color.FromArgb(30, 0, 0, 0);
+            dateLabel.BackColor = Color.FromArgb(30, 0, 0, 0);
+            timeLabel.BackColor = Color.FromArgb(30, 0, 0, 0);
+            dateLabel.ForeColor = Color.Black;
+            timeLabel.ForeColor = Color.Black;
+
         }
     }
 }

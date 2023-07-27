@@ -66,9 +66,9 @@
             // adminModeButton
             // 
             this.adminModeButton.ForeColor = System.Drawing.Color.Black;
-            this.adminModeButton.Location = new System.Drawing.Point(21, 871);
+            this.adminModeButton.Location = new System.Drawing.Point(19, 871);
             this.adminModeButton.Name = "adminModeButton";
-            this.adminModeButton.Size = new System.Drawing.Size(541, 51);
+            this.adminModeButton.Size = new System.Drawing.Size(545, 51);
             this.adminModeButton.TabIndex = 39;
             this.adminModeButton.Text = "Administrator Mode";
             this.adminModeButton.UseVisualStyleBackColor = true;
