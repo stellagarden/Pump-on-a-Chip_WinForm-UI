@@ -19,6 +19,16 @@ namespace Pump_on_a_Chip.Forms
             InitializeComponent();
         }
 
+        private void AdminModeForm_Load(object sender, EventArgs e)
+        {
+            resPLabel.Text = Global.resP.ToString();
+            cellPLabel.Text = Global.cellP.ToString();
+            atPLabel.Text = Global.atP.ToString();
+            flowrateLabel.Text = Global.flowrate.ToString();
+            propCurrentLabel.Text = Global.prop_valve.ToString();
+            propTargetLabel.Text = Global.prop_valve_target.ToString();
+        }
+
         private void userModeButton_Click(object sender, EventArgs e)
         {
             mainForm.changeToUser();
@@ -37,5 +47,47 @@ namespace Pump_on_a_Chip.Forms
             Global.resP_target = 2000 + 20 * resPTargetSlider.Value;
             resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
         }
+        private void loadCellLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("C");
+        }
+
+        private void runPumpLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("P"+ Global.resP_target.ToString());
+        }
+
+        private void ventPressureReservoirLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("A");
+        }
+
+        private void ventCellReservoirLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("B");
+        }
+
+        private void remeasureAtmosphericPressureLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("I");
+        }
+
+        private void propIncLabel_Click(object sender, EventArgs e)
+        {
+            Global.prop_valve_target = Global.prop_valve_target + 1;
+            propTargetLabel.Text = Global.prop_valve_target.ToString();
+        }
+
+        private void propDecLabel_Click(object sender, EventArgs e)
+        {
+            Global.prop_valve_target = Global.prop_valve_target - 1;
+            propTargetLabel.Text = Global.prop_valve_target.ToString();
+        }
+
+        private void propValveSetLabel_Click(object sender, EventArgs e)
+        {
+            serialWrite("V" + Global.prop_valve_target.ToString());
+        }
+
     }
 }

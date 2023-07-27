@@ -90,7 +90,7 @@ namespace Pump_on_a_Chip
                     Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
                     break;
                 case 'V':
-                    Global.prop_valve = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    Global.prop_valve = Convert.ToInt32(data.Substring(1, data.Length - 1));
                     break;
                 case 'S':
                     switch (data[1])
