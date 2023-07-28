@@ -18,7 +18,6 @@ namespace Pump_on_a_Chip
 {
     public partial class MainForm : Form
     {
-        private DateTime operation_start;
         public delegate void serialDelegate(string data);
         private UserModeForm userModeForm = new UserModeForm();
         private AdminModeForm adminModeForm = new AdminModeForm();
@@ -79,18 +78,25 @@ namespace Pump_on_a_Chip
                 case 'R':
                     userModeForm.Ready();
                     Global.atP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    adminModeForm.atPLabel.Text = Global.atP.ToString();
                     break;
                 case 'P':
                     Global.resP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    adminModeForm.resPLabel.Text = Global.resP.ToString();
                     break;
                 case 'C':
                     Global.cellP = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    adminModeForm.cellPLabel.Text = Global.cellP.ToString();
+                    userModeForm.pCellLabel.Text = Global.cellP.ToString();
                     break;
                 case 'F':
                     Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    adminModeForm.flowrateLabel.Text = Global.flowrate.ToString();
+                    userModeForm.flowrateLabel.Text = Global.flowrate.ToString();
                     break;
                 case 'V':
                     Global.prop_valve = Convert.ToInt32(data.Substring(1, data.Length - 1));
+                    adminModeForm.propCurrentLabel.Text = Global.prop_valve.ToString();
                     break;
                 case 'S':
                     switch (data[1])

@@ -621,10 +621,6 @@
         private System.Windows.Forms.Label cellPTextLabel;
         private System.Windows.Forms.Label atPTextLabel;
         private System.Windows.Forms.Label flowrateTextLabel;
-        private System.Windows.Forms.Label resPLabel;
-        private System.Windows.Forms.Label cellPLabel;
-        private System.Windows.Forms.Label atPLabel;
-        private System.Windows.Forms.Label flowrateLabel;
         private System.Windows.Forms.Button userModeButton;
         private MaterialSkin.Controls.MaterialSlider resPTargetSlider;
         private System.Windows.Forms.Label resPTargetLabel;
@@ -646,12 +642,16 @@
         private RoundControl propValveSetButton;
         private System.Windows.Forms.Label propCurrentTextLabel;
         private System.Windows.Forms.Label propTargetTextLabel;
-        private System.Windows.Forms.Label propCurrentLabel;
-        private System.Windows.Forms.Label propTargetLabel;
         private System.Windows.Forms.Label propValveSetLabel;
         private RoundControl roundControl8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label propIncLabel;
         private System.Windows.Forms.Label propDecLabel;
+        public System.Windows.Forms.Label resPLabel;
+        public System.Windows.Forms.Label cellPLabel;
+        public System.Windows.Forms.Label atPLabel;
+        public System.Windows.Forms.Label flowrateLabel;
+        public System.Windows.Forms.Label propCurrentLabel;
+        public System.Windows.Forms.Label propTargetLabel;
     }
 }

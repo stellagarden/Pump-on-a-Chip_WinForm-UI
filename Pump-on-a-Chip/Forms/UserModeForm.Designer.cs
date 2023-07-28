@@ -304,8 +304,6 @@
         private RoundControl roundControl2;
         public System.Windows.Forms.Timer operatingTimer;
         public System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Label pCellLabel;
-        private System.Windows.Forms.Label flowrateLabel;
         private System.Windows.Forms.Label operatingTimeLabel;
         private System.Windows.Forms.Label operatingTimeTextLabel;
         private RoundControl roundControl1;
@@ -314,5 +312,7 @@
         private System.Windows.Forms.Label pCellTargetLabel;
         private System.Windows.Forms.Label pCellTargetTextLabel;
         private RoundButton startButton;
+        public System.Windows.Forms.Label pCellLabel;
+        public System.Windows.Forms.Label flowrateLabel;
     }
 }
