@@ -71,7 +71,7 @@
             this.roundControl1 = new Pump_on_a_Chip.RoundControl();
             this.pinch3CellWasteRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.pinch3CellRadio = new MaterialSkin.Controls.MaterialRadioButton();
-            this.pinch3TextLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.pinch3TextLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // resPTextLabel
@@ -204,7 +204,7 @@
             this.resPTargetLabel.Name = "resPTargetLabel";
             this.resPTargetLabel.Size = new System.Drawing.Size(200, 50);
             this.resPTargetLabel.TabIndex = 43;
-            this.resPTargetLabel.Text = "3000 mbar";
+            this.resPTargetLabel.Text = "2000 mbar";
             this.resPTargetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // resPTargetTextLabel
@@ -384,7 +384,7 @@
             this.pinch1Switch.Depth = 0;
             this.pinch1Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pinch1Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch1Switch.Location = new System.Drawing.Point(66, 700);
+            this.pinch1Switch.Location = new System.Drawing.Point(80, 706);
             this.pinch1Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pinch1Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch1Switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -402,7 +402,7 @@
             this.pinch2Switch.Depth = 0;
             this.pinch2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pinch2Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch2Switch.Location = new System.Drawing.Point(66, 751);
+            this.pinch2Switch.Location = new System.Drawing.Point(80, 754);
             this.pinch2Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pinch2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch2Switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -420,7 +420,7 @@
             this.pump2Switch.Depth = 0;
             this.pump2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pump2Switch.ForeColor = System.Drawing.Color.White;
-            this.pump2Switch.Location = new System.Drawing.Point(66, 802);
+            this.pump2Switch.Location = new System.Drawing.Point(80, 802);
             this.pump2Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pump2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pump2Switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -593,7 +593,7 @@
             this.pinch3CellWasteRadio.AutoSize = true;
             this.pinch3CellWasteRadio.Checked = true;
             this.pinch3CellWasteRadio.Depth = 0;
-            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(330, 751);
+            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(334, 746);
             this.pinch3CellWasteRadio.Margin = new System.Windows.Forms.Padding(0);
             this.pinch3CellWasteRadio.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch3CellWasteRadio.MouseState = MaterialSkin.MouseState.HOVER;
@@ -609,7 +609,7 @@
             // 
             this.pinch3CellRadio.AutoSize = true;
             this.pinch3CellRadio.Depth = 0;
-            this.pinch3CellRadio.Location = new System.Drawing.Point(330, 788);
+            this.pinch3CellRadio.Location = new System.Drawing.Point(334, 783);
             this.pinch3CellRadio.Margin = new System.Windows.Forms.Padding(0);
             this.pinch3CellRadio.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch3CellRadio.MouseState = MaterialSkin.MouseState.HOVER;
@@ -625,13 +625,12 @@
             // pinch3TextLabel
             // 
             this.pinch3TextLabel.AutoSize = true;
-            this.pinch3TextLabel.Depth = 0;
-            this.pinch3TextLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.pinch3TextLabel.Location = new System.Drawing.Point(448, 718);
-            this.pinch3TextLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3TextLabel.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.pinch3TextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(198)))));
+            this.pinch3TextLabel.Location = new System.Drawing.Point(372, 717);
             this.pinch3TextLabel.Name = "pinch3TextLabel";
-            this.pinch3TextLabel.Size = new System.Drawing.Size(97, 19);
-            this.pinch3TextLabel.TabIndex = 67;
+            this.pinch3TextLabel.Size = new System.Drawing.Size(125, 23);
+            this.pinch3TextLabel.TabIndex = 66;
             this.pinch3TextLabel.Text = "Pinch Valve 3";
             // 
             // AdminModeForm
@@ -739,6 +738,6 @@
         private MaterialSkin.Controls.MaterialSwitch pump2Switch;
         private MaterialSkin.Controls.MaterialRadioButton pinch3CellWasteRadio;
         private MaterialSkin.Controls.MaterialRadioButton pinch3CellRadio;
-        private MaterialSkin.Controls.MaterialLabel pinch3TextLabel;
+        private System.Windows.Forms.Label pinch3TextLabel;
     }
 }

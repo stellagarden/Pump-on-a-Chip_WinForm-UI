@@ -12,10 +12,10 @@ namespace Pump_on_a_Chip
         public static double resP = 0.0;
         public static double cellP = 0.0;
         public static double flowrate = 0.0;
-        public static int prop_valve = 100;
+        public static int prop_valve = 0;
         public static int prop_valve_target = 80;
         public static int cellP_target = 300;
-        public static int resP_target = 3000;
+        public static int resP_target = 2000;
 
     }
 }

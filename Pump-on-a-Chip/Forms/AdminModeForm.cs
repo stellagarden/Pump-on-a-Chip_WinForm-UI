@@ -25,12 +25,7 @@ namespace Pump_on_a_Chip.Forms
         private void AdminModeForm_Load(object sender, EventArgs e)
         {
             propTargetLabel.Text = Global.prop_valve_target.ToString();
-            pinch1Switch.Font = new Font("Bahnschrift", 15);
-            pinch2Switch.Font = new Font("Bahnschrift", 15);
-            pump2Switch.Font = new Font("Bahnschrift", 15);
-            pinch3TextLabel.Font = new Font("Bahnschrift", 15);
-            pinch3CellWasteRadio.Font = new Font("Bahnschrift", 15);
-            pinch3CellRadio.Font = new Font("Bahnschrift", 15);
+            resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
         }
 
         private void mainSerialWrite(string args)
@@ -51,8 +46,8 @@ namespace Pump_on_a_Chip.Forms
 
         private void pPressureSlider_onValueChanged(object sender, int newValue)
         {
-            // Slider value's range: 2000 ~ 4000 mbar
-            Global.resP_target = 2000 + 20 * resPTargetSlider.Value;
+            // Slider value's range: 1000 ~ 3000 mbar
+            Global.resP_target = 1000 + 20 * resPTargetSlider.Value;
             resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
         }
         private void runPumpLabel_Click(object sender, EventArgs e)
