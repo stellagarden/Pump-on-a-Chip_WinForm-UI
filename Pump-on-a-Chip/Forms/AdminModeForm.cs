@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,28 +18,35 @@ namespace Pump_on_a_Chip.Forms
         public AdminModeForm()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
         }
 
         private void AdminModeForm_Load(object sender, EventArgs e)
         {
-            resPLabel.Text = Global.resP.ToString();
-            cellPLabel.Text = Global.cellP.ToString();
-            atPLabel.Text = Global.atP.ToString();
-            flowrateLabel.Text = Global.flowrate.ToString();
-            propCurrentLabel.Text = Global.prop_valve.ToString();
             propTargetLabel.Text = Global.prop_valve_target.ToString();
+            pinch1Switch.Font = new Font("Bahnschrift", 15);
+            pinch2Switch.Font = new Font("Bahnschrift", 15);
+            pump2Switch.Font = new Font("Bahnschrift", 15);
+            pinch3TextLabel.Font = new Font("Bahnschrift", 15);
+            pinch3CellWasteRadio.Font = new Font("Bahnschrift", 15);
+            pinch3CellRadio.Font = new Font("Bahnschrift", 15);
         }
 
+        private void mainSerialWrite(string args)
+        {
+            mainForm.main_serial.Write(args);
+            Console.WriteLine("Send (main): " + args);
+        }
+        private void sampSerialWrite(string args)
+        {
+            mainForm.samp_serial.Write(args);
+            Console.WriteLine("Send (samp): " + args);
+        }
         private void userModeButton_Click(object sender, EventArgs e)
         {
+            mainSerialWrite("T"+ Global.resP_target.ToString());
             mainForm.changeToUser();
-            serialWrite("T"+ Global.resP_target.ToString());
-        }
-
-        private void serialWrite(string args)
-        {
-            mainForm.serial.Write(args);
-            Console.WriteLine("Send: " + args);
         }
 
         private void pPressureSlider_onValueChanged(object sender, int newValue)
@@ -47,29 +55,24 @@ namespace Pump_on_a_Chip.Forms
             Global.resP_target = 2000 + 20 * resPTargetSlider.Value;
             resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
         }
-        private void loadCellLabel_Click(object sender, EventArgs e)
-        {
-            serialWrite("C");
-        }
-
         private void runPumpLabel_Click(object sender, EventArgs e)
         {
-            serialWrite("P"+ Global.resP_target.ToString());
+            mainSerialWrite("P"+ Global.resP_target.ToString());
         }
 
         private void ventPressureReservoirLabel_Click(object sender, EventArgs e)
         {
-            serialWrite("A");
+            mainSerialWrite("A");
         }
 
         private void ventCellReservoirLabel_Click(object sender, EventArgs e)
         {
-            serialWrite("B");
+            mainSerialWrite("B");
         }
 
         private void remeasureAtmosphericPressureLabel_Click(object sender, EventArgs e)
         {
-            serialWrite("I");
+            mainSerialWrite("I");
         }
 
         private void propIncLabel_Click(object sender, EventArgs e)
@@ -86,8 +89,56 @@ namespace Pump_on_a_Chip.Forms
 
         private void propValveSetLabel_Click(object sender, EventArgs e)
         {
-            serialWrite("V" + Global.prop_valve_target.ToString());
+            mainSerialWrite("V" + Global.prop_valve_target.ToString());
         }
+
+        private void pinch1Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pinch1Switch.Checked)
+            {
+                sampSerialWrite("1O");
+            }
+            else
+            {
+                sampSerialWrite("1X");
+            }
+        }
+
+        private void pinch2Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pinch2Switch.Checked)
+            {
+                sampSerialWrite("2O");
+            }
+            else
+            {
+                sampSerialWrite("2X");
+            }
+        }
+        private void pinch3CellRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pinch3CellRadio.Checked)
+            {
+                sampSerialWrite("3O");
+            }
+            else
+            {
+                sampSerialWrite("3X");
+            }
+        }
+
+        private void pump2Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pump2Switch.Checked)
+            {
+                sampSerialWrite("PO");
+            }
+            else
+            {
+                sampSerialWrite("PX");
+            }
+        }
+
 
     }
 }

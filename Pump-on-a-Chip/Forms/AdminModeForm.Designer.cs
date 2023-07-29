@@ -44,7 +44,6 @@
             this.propValveTextLabel = new System.Windows.Forms.Label();
             this.ventPressureReservoirLabel = new System.Windows.Forms.Label();
             this.ventCellReservoirLabel = new System.Windows.Forms.Label();
-            this.loadCellLabel = new System.Windows.Forms.Label();
             this.runPumpLabel = new System.Windows.Forms.Label();
             this.remeasureAtmosphericPressureLabel = new System.Windows.Forms.Label();
             this.propCurrentTextLabel = new System.Windows.Forms.Label();
@@ -53,11 +52,13 @@
             this.propTargetLabel = new System.Windows.Forms.Label();
             this.propValveSetLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.propIncLabel = new System.Windows.Forms.Label();
             this.propDecLabel = new System.Windows.Forms.Label();
+            this.propIncLabel = new System.Windows.Forms.Label();
+            this.pinch1Switch = new MaterialSkin.Controls.MaterialSwitch();
+            this.pinch2Switch = new MaterialSkin.Controls.MaterialSwitch();
+            this.pump2Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.roundControl8 = new Pump_on_a_Chip.RoundControl();
             this.propValveSetButton = new Pump_on_a_Chip.RoundControl();
-            this.loadCellButton = new Pump_on_a_Chip.RoundControl();
             this.runPumpButton = new Pump_on_a_Chip.RoundControl();
             this.remeasureAtmosphericPressureButton = new Pump_on_a_Chip.RoundControl();
             this.ventCellReservoirButton = new Pump_on_a_Chip.RoundControl();
@@ -68,6 +69,9 @@
             this.roundControl4 = new Pump_on_a_Chip.RoundControl();
             this.roundControl3 = new Pump_on_a_Chip.RoundControl();
             this.roundControl1 = new Pump_on_a_Chip.RoundControl();
+            this.pinch3CellWasteRadio = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pinch3CellRadio = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pinch3TextLabel = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // resPTextLabel
@@ -181,7 +185,7 @@
             // 
             this.resPTargetSlider.Depth = 0;
             this.resPTargetSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resPTargetSlider.Location = new System.Drawing.Point(5, 395);
+            this.resPTargetSlider.Location = new System.Drawing.Point(5, 381);
             this.resPTargetSlider.MouseState = MaterialSkin.MouseState.HOVER;
             this.resPTargetSlider.Name = "resPTargetSlider";
             this.resPTargetSlider.ShowText = false;
@@ -194,9 +198,9 @@
             // resPTargetLabel
             // 
             this.resPTargetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
-            this.resPTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.resPTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.resPTargetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.resPTargetLabel.Location = new System.Drawing.Point(369, 354);
+            this.resPTargetLabel.Location = new System.Drawing.Point(369, 343);
             this.resPTargetLabel.Name = "resPTargetLabel";
             this.resPTargetLabel.Size = new System.Drawing.Size(200, 50);
             this.resPTargetLabel.TabIndex = 43;
@@ -206,9 +210,9 @@
             // resPTargetTextLabel
             // 
             this.resPTargetTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
-            this.resPTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.resPTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.resPTargetTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.resPTargetTextLabel.Location = new System.Drawing.Point(17, 354);
+            this.resPTargetTextLabel.Location = new System.Drawing.Point(17, 343);
             this.resPTargetTextLabel.Name = "resPTargetTextLabel";
             this.resPTargetTextLabel.Size = new System.Drawing.Size(320, 50);
             this.resPTargetTextLabel.TabIndex = 42;
@@ -218,19 +222,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.panel1.Location = new System.Drawing.Point(22, 502);
+            this.panel1.Location = new System.Drawing.Point(22, 484);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 37);
+            this.panel1.Size = new System.Drawing.Size(261, 37);
             this.panel1.TabIndex = 46;
             // 
             // propValveTextLabel
             // 
             this.propValveTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.propValveTextLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propValveTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propValveTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.propValveTextLabel.Location = new System.Drawing.Point(44, 452);
+            this.propValveTextLabel.Location = new System.Drawing.Point(44, 437);
             this.propValveTextLabel.Name = "propValveTextLabel";
-            this.propValveTextLabel.Size = new System.Drawing.Size(300, 38);
+            this.propValveTextLabel.Size = new System.Drawing.Size(213, 38);
             this.propValveTextLabel.TabIndex = 47;
             this.propValveTextLabel.Text = "Proportional Valve";
             this.propValveTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,11 +242,11 @@
             // ventPressureReservoirLabel
             // 
             this.ventPressureReservoirLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.ventPressureReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.ventPressureReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.ventPressureReservoirLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.ventPressureReservoirLabel.Location = new System.Drawing.Point(393, 450);
+            this.ventPressureReservoirLabel.Location = new System.Drawing.Point(306, 439);
             this.ventPressureReservoirLabel.Name = "ventPressureReservoirLabel";
-            this.ventPressureReservoirLabel.Size = new System.Drawing.Size(164, 107);
+            this.ventPressureReservoirLabel.Size = new System.Drawing.Size(111, 100);
             this.ventPressureReservoirLabel.TabIndex = 50;
             this.ventPressureReservoirLabel.Text = "Vent\r\nPressure\r\nReservoir";
             this.ventPressureReservoirLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -251,50 +255,37 @@
             // ventCellReservoirLabel
             // 
             this.ventCellReservoirLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.ventCellReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.ventCellReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.ventCellReservoirLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.ventCellReservoirLabel.Location = new System.Drawing.Point(393, 594);
+            this.ventCellReservoirLabel.Location = new System.Drawing.Point(446, 439);
             this.ventCellReservoirLabel.Name = "ventCellReservoirLabel";
-            this.ventCellReservoirLabel.Size = new System.Drawing.Size(164, 107);
+            this.ventCellReservoirLabel.Size = new System.Drawing.Size(111, 100);
             this.ventCellReservoirLabel.TabIndex = 51;
             this.ventCellReservoirLabel.Text = "Vent\r\nCell\r\nReservoir";
             this.ventCellReservoirLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ventCellReservoirLabel.Click += new System.EventHandler(this.ventCellReservoirLabel_Click);
             // 
-            // loadCellLabel
-            // 
-            this.loadCellLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.loadCellLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
-            this.loadCellLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.loadCellLabel.Location = new System.Drawing.Point(28, 734);
-            this.loadCellLabel.Name = "loadCellLabel";
-            this.loadCellLabel.Size = new System.Drawing.Size(121, 109);
-            this.loadCellLabel.TabIndex = 50;
-            this.loadCellLabel.Text = "Load\r\nCells";
-            this.loadCellLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.loadCellLabel.Click += new System.EventHandler(this.loadCellLabel_Click);
-            // 
             // runPumpLabel
             // 
             this.runPumpLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.runPumpLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.runPumpLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.runPumpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.runPumpLabel.Location = new System.Drawing.Point(184, 734);
+            this.runPumpLabel.Location = new System.Drawing.Point(307, 572);
             this.runPumpLabel.Name = "runPumpLabel";
-            this.runPumpLabel.Size = new System.Drawing.Size(121, 109);
+            this.runPumpLabel.Size = new System.Drawing.Size(111, 100);
             this.runPumpLabel.TabIndex = 50;
-            this.runPumpLabel.Text = "Run Pump";
+            this.runPumpLabel.Text = "Pressurize Pressure Reservoir";
             this.runPumpLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.runPumpLabel.Click += new System.EventHandler(this.runPumpLabel_Click);
             // 
             // remeasureAtmosphericPressureLabel
             // 
             this.remeasureAtmosphericPressureLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.remeasureAtmosphericPressureLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.remeasureAtmosphericPressureLabel.Font = new System.Drawing.Font("Bahnschrift", 12.7F);
             this.remeasureAtmosphericPressureLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.remeasureAtmosphericPressureLabel.Location = new System.Drawing.Point(341, 734);
+            this.remeasureAtmosphericPressureLabel.Location = new System.Drawing.Point(447, 572);
             this.remeasureAtmosphericPressureLabel.Name = "remeasureAtmosphericPressureLabel";
-            this.remeasureAtmosphericPressureLabel.Size = new System.Drawing.Size(216, 109);
+            this.remeasureAtmosphericPressureLabel.Size = new System.Drawing.Size(111, 100);
             this.remeasureAtmosphericPressureLabel.TabIndex = 50;
             this.remeasureAtmosphericPressureLabel.Text = "Remeasure Atmospheric Pressure";
             this.remeasureAtmosphericPressureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -303,9 +294,9 @@
             // propCurrentTextLabel
             // 
             this.propCurrentTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propCurrentTextLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propCurrentTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propCurrentTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.propCurrentTextLabel.Location = new System.Drawing.Point(55, 520);
+            this.propCurrentTextLabel.Location = new System.Drawing.Point(32, 495);
             this.propCurrentTextLabel.Name = "propCurrentTextLabel";
             this.propCurrentTextLabel.Size = new System.Drawing.Size(144, 31);
             this.propCurrentTextLabel.TabIndex = 54;
@@ -315,9 +306,9 @@
             // propTargetTextLabel
             // 
             this.propTargetTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propTargetTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.propTargetTextLabel.Location = new System.Drawing.Point(57, 561);
+            this.propTargetTextLabel.Location = new System.Drawing.Point(32, 530);
             this.propTargetTextLabel.Name = "propTargetTextLabel";
             this.propTargetTextLabel.Size = new System.Drawing.Size(144, 31);
             this.propTargetTextLabel.TabIndex = 55;
@@ -327,11 +318,11 @@
             // propCurrentLabel
             // 
             this.propCurrentLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propCurrentLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propCurrentLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propCurrentLabel.ForeColor = System.Drawing.Color.White;
-            this.propCurrentLabel.Location = new System.Drawing.Point(211, 520);
+            this.propCurrentLabel.Location = new System.Drawing.Point(188, 495);
             this.propCurrentLabel.Name = "propCurrentLabel";
-            this.propCurrentLabel.Size = new System.Drawing.Size(144, 31);
+            this.propCurrentLabel.Size = new System.Drawing.Size(70, 31);
             this.propCurrentLabel.TabIndex = 54;
             this.propCurrentLabel.Text = "00";
             this.propCurrentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -339,11 +330,11 @@
             // propTargetLabel
             // 
             this.propTargetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propTargetLabel.ForeColor = System.Drawing.Color.White;
-            this.propTargetLabel.Location = new System.Drawing.Point(211, 561);
+            this.propTargetLabel.Location = new System.Drawing.Point(188, 530);
             this.propTargetLabel.Name = "propTargetLabel";
-            this.propTargetLabel.Size = new System.Drawing.Size(144, 31);
+            this.propTargetLabel.Size = new System.Drawing.Size(70, 31);
             this.propTargetLabel.TabIndex = 55;
             this.propTargetLabel.Text = "00";
             this.propTargetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -351,11 +342,11 @@
             // propValveSetLabel
             // 
             this.propValveSetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.propValveSetLabel.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.propValveSetLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.propValveSetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.propValveSetLabel.Location = new System.Drawing.Point(266, 614);
+            this.propValveSetLabel.Location = new System.Drawing.Point(195, 584);
             this.propValveSetLabel.Name = "propValveSetLabel";
-            this.propValveSetLabel.Size = new System.Drawing.Size(75, 66);
+            this.propValveSetLabel.Size = new System.Drawing.Size(62, 66);
             this.propValveSetLabel.TabIndex = 56;
             this.propValveSetLabel.Text = "Set";
             this.propValveSetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,28 +355,82 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.panel2.Location = new System.Drawing.Point(142, 617);
+            this.panel2.Location = new System.Drawing.Point(103, 587);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(2, 60);
             this.panel2.TabIndex = 58;
             // 
+            // propDecLabel
+            // 
+            this.propDecLabel.Image = global::Pump_on_a_Chip.Properties.Resources.dec2;
+            this.propDecLabel.Location = new System.Drawing.Point(107, 582);
+            this.propDecLabel.Name = "propDecLabel";
+            this.propDecLabel.Size = new System.Drawing.Size(58, 70);
+            this.propDecLabel.TabIndex = 59;
+            this.propDecLabel.Click += new System.EventHandler(this.propDecLabel_Click);
+            // 
             // propIncLabel
             // 
-            this.propIncLabel.Image = global::Pump_on_a_Chip.Properties.Resources.inc;
-            this.propIncLabel.Location = new System.Drawing.Point(45, 613);
+            this.propIncLabel.Image = global::Pump_on_a_Chip.Properties.Resources.inc2;
+            this.propIncLabel.Location = new System.Drawing.Point(43, 582);
             this.propIncLabel.Name = "propIncLabel";
-            this.propIncLabel.Size = new System.Drawing.Size(95, 70);
+            this.propIncLabel.Size = new System.Drawing.Size(58, 70);
             this.propIncLabel.TabIndex = 59;
             this.propIncLabel.Click += new System.EventHandler(this.propIncLabel_Click);
             // 
-            // propDecLabel
+            // pinch1Switch
             // 
-            this.propDecLabel.Image = global::Pump_on_a_Chip.Properties.Resources.dec;
-            this.propDecLabel.Location = new System.Drawing.Point(147, 612);
-            this.propDecLabel.Name = "propDecLabel";
-            this.propDecLabel.Size = new System.Drawing.Size(95, 70);
-            this.propDecLabel.TabIndex = 59;
-            this.propDecLabel.Click += new System.EventHandler(this.propDecLabel_Click);
+            this.pinch1Switch.AutoSize = true;
+            this.pinch1Switch.Depth = 0;
+            this.pinch1Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
+            this.pinch1Switch.ForeColor = System.Drawing.Color.White;
+            this.pinch1Switch.Location = new System.Drawing.Point(66, 700);
+            this.pinch1Switch.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch1Switch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch1Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch1Switch.Name = "pinch1Switch";
+            this.pinch1Switch.Ripple = true;
+            this.pinch1Switch.Size = new System.Drawing.Size(154, 37);
+            this.pinch1Switch.TabIndex = 60;
+            this.pinch1Switch.Text = "Pinch Valve 1";
+            this.pinch1Switch.UseVisualStyleBackColor = true;
+            this.pinch1Switch.CheckedChanged += new System.EventHandler(this.pinch1Switch_CheckedChanged);
+            // 
+            // pinch2Switch
+            // 
+            this.pinch2Switch.AutoSize = true;
+            this.pinch2Switch.Depth = 0;
+            this.pinch2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
+            this.pinch2Switch.ForeColor = System.Drawing.Color.White;
+            this.pinch2Switch.Location = new System.Drawing.Point(66, 751);
+            this.pinch2Switch.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch2Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch2Switch.Name = "pinch2Switch";
+            this.pinch2Switch.Ripple = true;
+            this.pinch2Switch.Size = new System.Drawing.Size(154, 37);
+            this.pinch2Switch.TabIndex = 61;
+            this.pinch2Switch.Text = "Pinch Valve 2";
+            this.pinch2Switch.UseVisualStyleBackColor = true;
+            this.pinch2Switch.CheckedChanged += new System.EventHandler(this.pinch2Switch_CheckedChanged);
+            // 
+            // pump2Switch
+            // 
+            this.pump2Switch.AutoSize = true;
+            this.pump2Switch.Depth = 0;
+            this.pump2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
+            this.pump2Switch.ForeColor = System.Drawing.Color.White;
+            this.pump2Switch.Location = new System.Drawing.Point(66, 802);
+            this.pump2Switch.Margin = new System.Windows.Forms.Padding(0);
+            this.pump2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pump2Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pump2Switch.Name = "pump2Switch";
+            this.pump2Switch.Ripple = true;
+            this.pump2Switch.Size = new System.Drawing.Size(163, 37);
+            this.pump2Switch.TabIndex = 63;
+            this.pump2Switch.Text = "Drawing Pump";
+            this.pump2Switch.UseVisualStyleBackColor = true;
+            this.pump2Switch.CheckedChanged += new System.EventHandler(this.pump2Switch_CheckedChanged);
             // 
             // roundControl8
             // 
@@ -393,11 +438,11 @@
             this.roundControl8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
             this.roundControl8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
             this.roundControl8.BorderWidth = 0F;
-            this.roundControl8.Location = new System.Drawing.Point(28, 597);
+            this.roundControl8.Location = new System.Drawing.Point(28, 567);
             this.roundControl8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.roundControl8.Name = "roundControl8";
             this.roundControl8.Radius = 20;
-            this.roundControl8.Size = new System.Drawing.Size(229, 99);
+            this.roundControl8.Size = new System.Drawing.Size(152, 99);
             this.roundControl8.TabIndex = 57;
             // 
             // propValveSetButton
@@ -406,25 +451,12 @@
             this.propValveSetButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.propValveSetButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.propValveSetButton.BorderWidth = 0F;
-            this.propValveSetButton.Location = new System.Drawing.Point(251, 597);
+            this.propValveSetButton.Location = new System.Drawing.Point(179, 567);
             this.propValveSetButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.propValveSetButton.Name = "propValveSetButton";
             this.propValveSetButton.Radius = 20;
-            this.propValveSetButton.Size = new System.Drawing.Size(105, 99);
+            this.propValveSetButton.Size = new System.Drawing.Size(94, 99);
             this.propValveSetButton.TabIndex = 53;
-            // 
-            // loadCellButton
-            // 
-            this.loadCellButton.BackColor = System.Drawing.Color.Transparent;
-            this.loadCellButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.loadCellButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.loadCellButton.BorderWidth = 0F;
-            this.loadCellButton.Location = new System.Drawing.Point(11, 718);
-            this.loadCellButton.Margin = new System.Windows.Forms.Padding(868, 6927, 868, 6927);
-            this.loadCellButton.Name = "loadCellButton";
-            this.loadCellButton.Radius = 20;
-            this.loadCellButton.Size = new System.Drawing.Size(154, 140);
-            this.loadCellButton.TabIndex = 49;
             // 
             // runPumpButton
             // 
@@ -432,11 +464,11 @@
             this.runPumpButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.runPumpButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.runPumpButton.BorderWidth = 0F;
-            this.runPumpButton.Location = new System.Drawing.Point(167, 718);
+            this.runPumpButton.Location = new System.Drawing.Point(290, 556);
             this.runPumpButton.Margin = new System.Windows.Forms.Padding(405, 2519, 405, 2519);
             this.runPumpButton.Name = "runPumpButton";
             this.runPumpButton.Radius = 20;
-            this.runPumpButton.Size = new System.Drawing.Size(154, 140);
+            this.runPumpButton.Size = new System.Drawing.Size(142, 131);
             this.runPumpButton.TabIndex = 49;
             // 
             // remeasureAtmosphericPressureButton
@@ -445,11 +477,11 @@
             this.remeasureAtmosphericPressureButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.remeasureAtmosphericPressureButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.remeasureAtmosphericPressureButton.BorderWidth = 0F;
-            this.remeasureAtmosphericPressureButton.Location = new System.Drawing.Point(324, 718);
+            this.remeasureAtmosphericPressureButton.Location = new System.Drawing.Point(430, 556);
             this.remeasureAtmosphericPressureButton.Margin = new System.Windows.Forms.Padding(189, 916, 189, 916);
             this.remeasureAtmosphericPressureButton.Name = "remeasureAtmosphericPressureButton";
             this.remeasureAtmosphericPressureButton.Radius = 20;
-            this.remeasureAtmosphericPressureButton.Size = new System.Drawing.Size(249, 140);
+            this.remeasureAtmosphericPressureButton.Size = new System.Drawing.Size(142, 131);
             this.remeasureAtmosphericPressureButton.TabIndex = 48;
             // 
             // ventCellReservoirButton
@@ -458,11 +490,11 @@
             this.ventCellReservoirButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.ventCellReservoirButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.ventCellReservoirButton.BorderWidth = 0F;
-            this.ventCellReservoirButton.Location = new System.Drawing.Point(377, 578);
+            this.ventCellReservoirButton.Location = new System.Drawing.Point(430, 423);
             this.ventCellReservoirButton.Margin = new System.Windows.Forms.Padding(88, 333, 88, 333);
             this.ventCellReservoirButton.Name = "ventCellReservoirButton";
             this.ventCellReservoirButton.Radius = 20;
-            this.ventCellReservoirButton.Size = new System.Drawing.Size(195, 138);
+            this.ventCellReservoirButton.Size = new System.Drawing.Size(142, 131);
             this.ventCellReservoirButton.TabIndex = 48;
             // 
             // ventPressureReservoirButton
@@ -471,11 +503,11 @@
             this.ventPressureReservoirButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.ventPressureReservoirButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.ventPressureReservoirButton.BorderWidth = 0F;
-            this.ventPressureReservoirButton.Location = new System.Drawing.Point(377, 434);
+            this.ventPressureReservoirButton.Location = new System.Drawing.Point(290, 423);
             this.ventPressureReservoirButton.Margin = new System.Windows.Forms.Padding(41, 121, 41, 121);
             this.ventPressureReservoirButton.Name = "ventPressureReservoirButton";
             this.ventPressureReservoirButton.Radius = 20;
-            this.ventPressureReservoirButton.Size = new System.Drawing.Size(195, 138);
+            this.ventPressureReservoirButton.Size = new System.Drawing.Size(142, 131);
             this.ventPressureReservoirButton.TabIndex = 48;
             // 
             // roundControl6
@@ -484,11 +516,11 @@
             this.roundControl6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
             this.roundControl6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
             this.roundControl6.BorderWidth = 0F;
-            this.roundControl6.Location = new System.Drawing.Point(11, 503);
+            this.roundControl6.Location = new System.Drawing.Point(11, 482);
             this.roundControl6.Margin = new System.Windows.Forms.Padding(41, 121, 41, 121);
             this.roundControl6.Name = "roundControl6";
             this.roundControl6.Radius = 20;
-            this.roundControl6.Size = new System.Drawing.Size(362, 212);
+            this.roundControl6.Size = new System.Drawing.Size(281, 205);
             this.roundControl6.TabIndex = 45;
             // 
             // roundControl5
@@ -497,11 +529,11 @@
             this.roundControl5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.roundControl5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
             this.roundControl5.BorderWidth = 0F;
-            this.roundControl5.Location = new System.Drawing.Point(13, 434);
+            this.roundControl5.Location = new System.Drawing.Point(13, 423);
             this.roundControl5.Margin = new System.Windows.Forms.Padding(19, 44, 19, 44);
             this.roundControl5.Name = "roundControl5";
             this.roundControl5.Radius = 20;
-            this.roundControl5.Size = new System.Drawing.Size(362, 270);
+            this.roundControl5.Size = new System.Drawing.Size(279, 270);
             this.roundControl5.TabIndex = 44;
             // 
             // roundControl2
@@ -556,12 +588,64 @@
             this.roundControl1.Size = new System.Drawing.Size(281, 140);
             this.roundControl1.TabIndex = 0;
             // 
+            // pinch3CellWasteRadio
+            // 
+            this.pinch3CellWasteRadio.AutoSize = true;
+            this.pinch3CellWasteRadio.Checked = true;
+            this.pinch3CellWasteRadio.Depth = 0;
+            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(330, 751);
+            this.pinch3CellWasteRadio.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch3CellWasteRadio.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch3CellWasteRadio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3CellWasteRadio.Name = "pinch3CellWasteRadio";
+            this.pinch3CellWasteRadio.Ripple = true;
+            this.pinch3CellWasteRadio.Size = new System.Drawing.Size(178, 37);
+            this.pinch3CellWasteRadio.TabIndex = 64;
+            this.pinch3CellWasteRadio.TabStop = true;
+            this.pinch3CellWasteRadio.Text = "Cell Waste Reservoir";
+            this.pinch3CellWasteRadio.UseVisualStyleBackColor = true;
+            // 
+            // pinch3CellRadio
+            // 
+            this.pinch3CellRadio.AutoSize = true;
+            this.pinch3CellRadio.Depth = 0;
+            this.pinch3CellRadio.Location = new System.Drawing.Point(330, 788);
+            this.pinch3CellRadio.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch3CellRadio.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch3CellRadio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3CellRadio.Name = "pinch3CellRadio";
+            this.pinch3CellRadio.Ripple = true;
+            this.pinch3CellRadio.Size = new System.Drawing.Size(130, 37);
+            this.pinch3CellRadio.TabIndex = 65;
+            this.pinch3CellRadio.TabStop = true;
+            this.pinch3CellRadio.Text = "Cell Reservoir";
+            this.pinch3CellRadio.UseVisualStyleBackColor = true;
+            this.pinch3CellRadio.CheckedChanged += new System.EventHandler(this.pinch3CellRadio_CheckedChanged);
+            // 
+            // pinch3TextLabel
+            // 
+            this.pinch3TextLabel.AutoSize = true;
+            this.pinch3TextLabel.Depth = 0;
+            this.pinch3TextLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pinch3TextLabel.Location = new System.Drawing.Point(448, 718);
+            this.pinch3TextLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3TextLabel.Name = "pinch3TextLabel";
+            this.pinch3TextLabel.Size = new System.Drawing.Size(97, 19);
+            this.pinch3TextLabel.TabIndex = 67;
+            this.pinch3TextLabel.Text = "Pinch Valve 3";
+            // 
             // AdminModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(584, 943);
+            this.Controls.Add(this.pinch3TextLabel);
+            this.Controls.Add(this.pinch3CellRadio);
+            this.Controls.Add(this.pinch3CellWasteRadio);
+            this.Controls.Add(this.pump2Switch);
+            this.Controls.Add(this.pinch2Switch);
+            this.Controls.Add(this.pinch1Switch);
             this.Controls.Add(this.propDecLabel);
             this.Controls.Add(this.propIncLabel);
             this.Controls.Add(this.panel2);
@@ -575,9 +659,7 @@
             this.Controls.Add(this.ventCellReservoirLabel);
             this.Controls.Add(this.remeasureAtmosphericPressureLabel);
             this.Controls.Add(this.runPumpLabel);
-            this.Controls.Add(this.loadCellLabel);
             this.Controls.Add(this.ventPressureReservoirLabel);
-            this.Controls.Add(this.loadCellButton);
             this.Controls.Add(this.runPumpButton);
             this.Controls.Add(this.remeasureAtmosphericPressureButton);
             this.Controls.Add(this.ventCellReservoirButton);
@@ -608,6 +690,7 @@
             this.Text = "AdminModeForm";
             this.Load += new System.EventHandler(this.AdminModeForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -633,10 +716,8 @@
         private RoundControl ventCellReservoirButton;
         private RoundControl remeasureAtmosphericPressureButton;
         private RoundControl runPumpButton;
-        private RoundControl loadCellButton;
         private System.Windows.Forms.Label ventPressureReservoirLabel;
         private System.Windows.Forms.Label ventCellReservoirLabel;
-        private System.Windows.Forms.Label loadCellLabel;
         private System.Windows.Forms.Label runPumpLabel;
         private System.Windows.Forms.Label remeasureAtmosphericPressureLabel;
         private RoundControl propValveSetButton;
@@ -653,5 +734,11 @@
         public System.Windows.Forms.Label flowrateLabel;
         public System.Windows.Forms.Label propCurrentLabel;
         public System.Windows.Forms.Label propTargetLabel;
+        private MaterialSkin.Controls.MaterialSwitch pinch1Switch;
+        private MaterialSkin.Controls.MaterialSwitch pinch2Switch;
+        private MaterialSkin.Controls.MaterialSwitch pump2Switch;
+        private MaterialSkin.Controls.MaterialRadioButton pinch3CellWasteRadio;
+        private MaterialSkin.Controls.MaterialRadioButton pinch3CellRadio;
+        private MaterialSkin.Controls.MaterialLabel pinch3TextLabel;
     }
 }

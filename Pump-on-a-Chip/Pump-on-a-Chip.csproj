@@ -167,5 +167,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dec2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

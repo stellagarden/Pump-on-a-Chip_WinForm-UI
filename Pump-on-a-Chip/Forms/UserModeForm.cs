@@ -23,6 +23,7 @@ namespace Pump_on_a_Chip.Forms
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.LightBlue100, TextShade.WHITE);
         }
 
@@ -73,10 +74,10 @@ namespace Pump_on_a_Chip.Forms
             pCellTargetLabel.Text = Global.cellP_target.ToString() + " mbar";
         }
 
-        private void serialWrite(string args)
+        private void sampSerialWrite(string args)
         {
-            mainForm.serial.Write(args);
-            Console.WriteLine("Send: "+args);
+            mainForm.samp_serial.Write(args);
+            Console.WriteLine("Send (samp): " + args);
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace Pump_on_a_Chip.Forms
             operation_start = DateTime.Now;
             operatingTimer.Start();
             statusLabel.Text = "CELL LOADING";
-            serialWrite("S"+ Global.cellP_target.ToString());
+            sampSerialWrite("S");
 
             // Disable input and change colors when it starts
             statusLabel.BackColor = Color.FromArgb(214, 40, 40);

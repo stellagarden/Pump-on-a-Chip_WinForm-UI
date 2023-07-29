@@ -21,13 +21,14 @@ namespace Pump_on_a_Chip
         public delegate void serialDelegate(string data);
         private UserModeForm userModeForm = new UserModeForm();
         private AdminModeForm adminModeForm = new AdminModeForm();
-        public SerialPort serial = new SerialPort();
+        public SerialPort main_serial = new SerialPort();
+        public SerialPort samp_serial = new SerialPort();
 
         public MainForm()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.LightBlue100, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.Yellow700, TextShade.WHITE);
             UserModeForm.mainForm = this;
             AdminModeForm.mainForm = this;
         }
@@ -44,15 +45,29 @@ namespace Pump_on_a_Chip
             // Arduino
             try
             {
-                serial.PortName = "COM6";
-                serial.BaudRate = 9600;
-                serial.DtrEnable = true;
-                serial.Open();
-                serial.ReadExisting();
-                serial.DataReceived += serial_DataReceived;
-                serial.Write("I");
+                main_serial.PortName = "COM6";
+                main_serial.BaudRate = 9600;
+                main_serial.DtrEnable = true;
+                main_serial.Open();
+                main_serial.ReadExisting();
+                main_serial.DataReceived += main_serial_DataReceived;
+                main_serial.Write("I");
             }
             catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK);
+            }
+            try
+            {
+                samp_serial.PortName = "COM3";
+                samp_serial.BaudRate = 9600;
+                samp_serial.DtrEnable = true;
+                samp_serial.Open();
+                samp_serial.ReadExisting();
+                samp_serial.DataReceived += samp_serial_DataReceived;
+                samp_serial.Write("I");
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK);
             }
@@ -64,15 +79,20 @@ namespace Pump_on_a_Chip
             timeLabel.Text = DateTime.Now.ToShortTimeString();
         }
 
-        private void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void main_serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string data = serial.ReadLine();
-            this.Invoke(new serialDelegate(dataProcess), data);
+            string data = main_serial.ReadLine();
+            this.Invoke(new serialDelegate(mainDataProcess), data);
         }
 
-        private void dataProcess(string data)
+        private void mainSerialWrite(string args)
         {
-            Console.Write("Received: "+data);
+            main_serial.Write(args);
+            Console.WriteLine("Send (main): " + args);
+        }
+        private void mainDataProcess(string data)
+        {
+            Console.Write("Received (main): "+data);
             switch (data[0])
             {
                 case 'R':
@@ -101,9 +121,6 @@ namespace Pump_on_a_Chip
                 case 'S':
                     switch (data[1])
                     {
-                        case '2':
-                            userModeForm.statusLabel.Text = "PRESSURIZING";
-                            break;
                         case '3':
                             userModeForm.statusLabel.Text = "RUNNING";
                             break;
@@ -121,6 +138,23 @@ namespace Pump_on_a_Chip
             }
         }
 
+        private void samp_serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            string data = samp_serial.ReadLine();
+            this.Invoke(new serialDelegate(sampDataProcess), data);
+        }
+
+        private void sampDataProcess(string data)
+        {
+            Console.Write("Received (samp): " + data);
+            switch (data[0])
+            {
+                case 'D':
+                    userModeForm.statusLabel.Text = "PRESSURIZING";
+                    mainSerialWrite("S" + Global.cellP_target.ToString());
+                    break;
+            }
+        }
         public void changeToAdmin()
         {
             adminModeForm.TopLevel = false;
@@ -149,7 +183,6 @@ namespace Pump_on_a_Chip
             timeLabel.BackColor = Color.FromArgb(30, 0, 0, 0);
             dateLabel.ForeColor = Color.Black;
             timeLabel.ForeColor = Color.Black;
-
         }
     }
 }
