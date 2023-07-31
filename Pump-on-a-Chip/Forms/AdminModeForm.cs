@@ -26,6 +26,7 @@ namespace Pump_on_a_Chip.Forms
         {
             propTargetLabel.Text = Global.prop_valve_target.ToString();
             resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
+            flowrateLabel.Text = "-";
         }
 
         private void mainSerialWrite(string args)
@@ -41,6 +42,12 @@ namespace Pump_on_a_Chip.Forms
         private void userModeButton_Click(object sender, EventArgs e)
         {
             mainSerialWrite("T"+ Global.resP_target.ToString());
+            sampSerialWrite("U");
+            pinch1Switch.Checked = false;
+            pinch2Switch.Checked = false;
+            pinch3CellRadio.Checked = false;
+            pump2Switch.Checked = false;
+            sol4Switch.Checked = false;
             mainForm.changeToUser();
         }
 
@@ -134,6 +141,16 @@ namespace Pump_on_a_Chip.Forms
             }
         }
 
-
+        private void sol4Switch_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sol4Switch.Checked)
+            {
+                mainSerialWrite("OO");
+            }
+            else
+            {
+                mainSerialWrite("OX");
+            }
+        }
     }
 }

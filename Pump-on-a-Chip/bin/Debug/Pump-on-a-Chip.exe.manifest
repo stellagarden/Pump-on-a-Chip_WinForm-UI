@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pump-on-a-Chip.exe" size="76264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pump-on-a-Chip.exe" size="76776">
       <assemblyIdentity name="Pump-on-a-Chip" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sfHm7QVDuxXGc48vdrRfW5l0M1TB9MQMAWandQ+AdcY=</dsig:DigestValue>
+        <dsig:DigestValue>8TNvb5L9xMn0UpBG8h6LCMVty9JW1FulKnOMEwQIY0A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

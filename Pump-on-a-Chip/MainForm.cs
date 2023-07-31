@@ -92,11 +92,11 @@ namespace Pump_on_a_Chip
         }
         private void mainDataProcess(string data)
         {
-            Console.Write("Received (main): "+data);
             switch (data[0])
             {
                 case 'R':
                     userModeForm.Ready();
+                    Console.Write("Received (main): " + data);
                     Global.atP = Convert.ToDouble(data.Substring(1, data.Length - 1));
                     adminModeForm.atPLabel.Text = Global.atP.ToString();
                     break;
@@ -109,16 +109,18 @@ namespace Pump_on_a_Chip
                     adminModeForm.cellPLabel.Text = Global.cellP.ToString();
                     userModeForm.pCellLabel.Text = Global.cellP.ToString();
                     break;
-                case 'F':
-                    Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
-                    adminModeForm.flowrateLabel.Text = Global.flowrate.ToString();
-                    userModeForm.flowrateLabel.Text = Global.flowrate.ToString();
-                    break;
+                //case 'F':
+                //    Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                //    adminModeForm.flowrateLabel.Text = Global.flowrate.ToString();
+                //    userModeForm.flowrateLabel.Text = Global.flowrate.ToString();
+                //    break;
                 case 'V':
+                    Console.Write("Received (main): " + data);
                     Global.prop_valve = Convert.ToInt32(data.Substring(1, data.Length - 1));
                     adminModeForm.propCurrentLabel.Text = Global.prop_valve.ToString();
                     break;
                 case 'S':
+                    Console.Write("Received (main): " + data);
                     switch (data[1])
                     {
                         case '3':
@@ -146,10 +148,10 @@ namespace Pump_on_a_Chip
 
         private void sampDataProcess(string data)
         {
-            Console.Write("Received (samp): " + data);
             switch (data[0])
             {
                 case 'D':
+                    Console.Write("Received (samp): " + data);
                     userModeForm.statusLabel.Text = "PRESSURIZING";
                     mainSerialWrite("S" + Global.cellP_target.ToString());
                     break;

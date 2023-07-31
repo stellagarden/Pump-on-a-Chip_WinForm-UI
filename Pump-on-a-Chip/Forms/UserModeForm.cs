@@ -55,8 +55,6 @@ namespace Pump_on_a_Chip.Forms
             roundControl1.BackgroundColor = Color.FromArgb(0, 48, 73);
             operatingTimeTextLabel.ForeColor = Color.FromArgb(0, 48, 73);
             operatingTimeLabel.ForeColor = Color.FromArgb(0, 48, 73);
-            pCellLabel.Text = Global.cellP.ToString();
-            flowrateLabel.Text = Global.flowrate.ToString();
             startButton.Enabled = true;
             startButton.BackColor = Color.FromArgb(252, 191, 73);
             startButton.ForeColor = Color.FromArgb(126, 85, 2);
@@ -80,11 +78,17 @@ namespace Pump_on_a_Chip.Forms
             Console.WriteLine("Send (samp): " + args);
         }
 
+        private void mainSerialWrite(string args)
+        {
+            mainForm.main_serial.Write(args);
+            Console.WriteLine("Send (main): " + args);
+        }
         private void startButton_Click(object sender, EventArgs e)
         {
             operation_start = DateTime.Now;
             operatingTimer.Start();
             statusLabel.Text = "CELL LOADING";
+            mainSerialWrite("T" + Global.resP_target.ToString());
             sampSerialWrite("S");
 
             // Disable input and change colors when it starts

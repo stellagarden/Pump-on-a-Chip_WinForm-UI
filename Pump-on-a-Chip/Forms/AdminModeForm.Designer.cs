@@ -57,6 +57,10 @@
             this.pinch1Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.pinch2Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.pump2Switch = new MaterialSkin.Controls.MaterialSwitch();
+            this.pinch3CellWasteRadio = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pinch3CellRadio = new MaterialSkin.Controls.MaterialRadioButton();
+            this.pinch3TextLabel = new System.Windows.Forms.Label();
+            this.sol4Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.roundControl8 = new Pump_on_a_Chip.RoundControl();
             this.propValveSetButton = new Pump_on_a_Chip.RoundControl();
             this.runPumpButton = new Pump_on_a_Chip.RoundControl();
@@ -69,9 +73,6 @@
             this.roundControl4 = new Pump_on_a_Chip.RoundControl();
             this.roundControl3 = new Pump_on_a_Chip.RoundControl();
             this.roundControl1 = new Pump_on_a_Chip.RoundControl();
-            this.pinch3CellWasteRadio = new MaterialSkin.Controls.MaterialRadioButton();
-            this.pinch3CellRadio = new MaterialSkin.Controls.MaterialRadioButton();
-            this.pinch3TextLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // resPTextLabel
@@ -193,6 +194,7 @@
             this.resPTargetSlider.Size = new System.Drawing.Size(570, 40);
             this.resPTargetSlider.TabIndex = 41;
             this.resPTargetSlider.Text = "";
+            this.resPTargetSlider.Value = 0;
             this.resPTargetSlider.onValueChanged += new MaterialSkin.Controls.MaterialSlider.ValueChanged(this.pPressureSlider_onValueChanged);
             // 
             // resPTargetLabel
@@ -204,7 +206,7 @@
             this.resPTargetLabel.Name = "resPTargetLabel";
             this.resPTargetLabel.Size = new System.Drawing.Size(200, 50);
             this.resPTargetLabel.TabIndex = 43;
-            this.resPTargetLabel.Text = "2000 mbar";
+            this.resPTargetLabel.Text = "1000 mbar";
             this.resPTargetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // resPTargetTextLabel
@@ -384,7 +386,7 @@
             this.pinch1Switch.Depth = 0;
             this.pinch1Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pinch1Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch1Switch.Location = new System.Drawing.Point(80, 706);
+            this.pinch1Switch.Location = new System.Drawing.Point(26, 781);
             this.pinch1Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pinch1Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch1Switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -402,7 +404,7 @@
             this.pinch2Switch.Depth = 0;
             this.pinch2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pinch2Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch2Switch.Location = new System.Drawing.Point(80, 754);
+            this.pinch2Switch.Location = new System.Drawing.Point(26, 822);
             this.pinch2Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pinch2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pinch2Switch.MouseState = MaterialSkin.MouseState.HOVER;
@@ -420,17 +422,80 @@
             this.pump2Switch.Depth = 0;
             this.pump2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
             this.pump2Switch.ForeColor = System.Drawing.Color.White;
-            this.pump2Switch.Location = new System.Drawing.Point(80, 802);
+            this.pump2Switch.Location = new System.Drawing.Point(27, 738);
             this.pump2Switch.Margin = new System.Windows.Forms.Padding(0);
             this.pump2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
             this.pump2Switch.MouseState = MaterialSkin.MouseState.HOVER;
             this.pump2Switch.Name = "pump2Switch";
             this.pump2Switch.Ripple = true;
-            this.pump2Switch.Size = new System.Drawing.Size(163, 37);
+            this.pump2Switch.Size = new System.Drawing.Size(202, 37);
             this.pump2Switch.TabIndex = 63;
-            this.pump2Switch.Text = "Drawing Pump";
+            this.pump2Switch.Text = "Cell Sampling Pump";
             this.pump2Switch.UseVisualStyleBackColor = true;
             this.pump2Switch.CheckedChanged += new System.EventHandler(this.pump2Switch_CheckedChanged);
+            // 
+            // pinch3CellWasteRadio
+            // 
+            this.pinch3CellWasteRadio.AutoSize = true;
+            this.pinch3CellWasteRadio.Checked = true;
+            this.pinch3CellWasteRadio.Depth = 0;
+            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(334, 769);
+            this.pinch3CellWasteRadio.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch3CellWasteRadio.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch3CellWasteRadio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3CellWasteRadio.Name = "pinch3CellWasteRadio";
+            this.pinch3CellWasteRadio.Ripple = true;
+            this.pinch3CellWasteRadio.Size = new System.Drawing.Size(178, 37);
+            this.pinch3CellWasteRadio.TabIndex = 64;
+            this.pinch3CellWasteRadio.TabStop = true;
+            this.pinch3CellWasteRadio.Text = "Cell Waste Reservoir";
+            this.pinch3CellWasteRadio.UseVisualStyleBackColor = true;
+            // 
+            // pinch3CellRadio
+            // 
+            this.pinch3CellRadio.AutoSize = true;
+            this.pinch3CellRadio.Depth = 0;
+            this.pinch3CellRadio.Location = new System.Drawing.Point(334, 806);
+            this.pinch3CellRadio.Margin = new System.Windows.Forms.Padding(0);
+            this.pinch3CellRadio.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.pinch3CellRadio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.pinch3CellRadio.Name = "pinch3CellRadio";
+            this.pinch3CellRadio.Ripple = true;
+            this.pinch3CellRadio.Size = new System.Drawing.Size(130, 37);
+            this.pinch3CellRadio.TabIndex = 65;
+            this.pinch3CellRadio.TabStop = true;
+            this.pinch3CellRadio.Text = "Cell Reservoir";
+            this.pinch3CellRadio.UseVisualStyleBackColor = true;
+            this.pinch3CellRadio.CheckedChanged += new System.EventHandler(this.pinch3CellRadio_CheckedChanged);
+            // 
+            // pinch3TextLabel
+            // 
+            this.pinch3TextLabel.AutoSize = true;
+            this.pinch3TextLabel.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.pinch3TextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(198)))));
+            this.pinch3TextLabel.Location = new System.Drawing.Point(372, 740);
+            this.pinch3TextLabel.Name = "pinch3TextLabel";
+            this.pinch3TextLabel.Size = new System.Drawing.Size(125, 23);
+            this.pinch3TextLabel.TabIndex = 66;
+            this.pinch3TextLabel.Text = "Pinch Valve 3";
+            // 
+            // sol4Switch
+            // 
+            this.sol4Switch.AutoSize = true;
+            this.sol4Switch.Depth = 0;
+            this.sol4Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
+            this.sol4Switch.ForeColor = System.Drawing.Color.White;
+            this.sol4Switch.Location = new System.Drawing.Point(26, 695);
+            this.sol4Switch.Margin = new System.Windows.Forms.Padding(0);
+            this.sol4Switch.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.sol4Switch.MouseState = MaterialSkin.MouseState.HOVER;
+            this.sol4Switch.Name = "sol4Switch";
+            this.sol4Switch.Ripple = true;
+            this.sol4Switch.Size = new System.Drawing.Size(358, 37);
+            this.sol4Switch.TabIndex = 67;
+            this.sol4Switch.Text = "Block Pressure Supply to the Cell Reservoir";
+            this.sol4Switch.UseVisualStyleBackColor = true;
+            this.sol4Switch.CheckedChanged += new System.EventHandler(this.sol4Switch_CheckedChanged);
             // 
             // roundControl8
             // 
@@ -588,57 +653,13 @@
             this.roundControl1.Size = new System.Drawing.Size(281, 140);
             this.roundControl1.TabIndex = 0;
             // 
-            // pinch3CellWasteRadio
-            // 
-            this.pinch3CellWasteRadio.AutoSize = true;
-            this.pinch3CellWasteRadio.Checked = true;
-            this.pinch3CellWasteRadio.Depth = 0;
-            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(334, 746);
-            this.pinch3CellWasteRadio.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch3CellWasteRadio.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch3CellWasteRadio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch3CellWasteRadio.Name = "pinch3CellWasteRadio";
-            this.pinch3CellWasteRadio.Ripple = true;
-            this.pinch3CellWasteRadio.Size = new System.Drawing.Size(178, 37);
-            this.pinch3CellWasteRadio.TabIndex = 64;
-            this.pinch3CellWasteRadio.TabStop = true;
-            this.pinch3CellWasteRadio.Text = "Cell Waste Reservoir";
-            this.pinch3CellWasteRadio.UseVisualStyleBackColor = true;
-            // 
-            // pinch3CellRadio
-            // 
-            this.pinch3CellRadio.AutoSize = true;
-            this.pinch3CellRadio.Depth = 0;
-            this.pinch3CellRadio.Location = new System.Drawing.Point(334, 783);
-            this.pinch3CellRadio.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch3CellRadio.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch3CellRadio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch3CellRadio.Name = "pinch3CellRadio";
-            this.pinch3CellRadio.Ripple = true;
-            this.pinch3CellRadio.Size = new System.Drawing.Size(130, 37);
-            this.pinch3CellRadio.TabIndex = 65;
-            this.pinch3CellRadio.TabStop = true;
-            this.pinch3CellRadio.Text = "Cell Reservoir";
-            this.pinch3CellRadio.UseVisualStyleBackColor = true;
-            this.pinch3CellRadio.CheckedChanged += new System.EventHandler(this.pinch3CellRadio_CheckedChanged);
-            // 
-            // pinch3TextLabel
-            // 
-            this.pinch3TextLabel.AutoSize = true;
-            this.pinch3TextLabel.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.pinch3TextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(198)))));
-            this.pinch3TextLabel.Location = new System.Drawing.Point(372, 717);
-            this.pinch3TextLabel.Name = "pinch3TextLabel";
-            this.pinch3TextLabel.Size = new System.Drawing.Size(125, 23);
-            this.pinch3TextLabel.TabIndex = 66;
-            this.pinch3TextLabel.Text = "Pinch Valve 3";
-            // 
             // AdminModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(584, 943);
+            this.Controls.Add(this.sol4Switch);
             this.Controls.Add(this.pinch3TextLabel);
             this.Controls.Add(this.pinch3CellRadio);
             this.Controls.Add(this.pinch3CellWasteRadio);
@@ -739,5 +760,6 @@
         private MaterialSkin.Controls.MaterialRadioButton pinch3CellWasteRadio;
         private MaterialSkin.Controls.MaterialRadioButton pinch3CellRadio;
         private System.Windows.Forms.Label pinch3TextLabel;
+        private MaterialSkin.Controls.MaterialSwitch sol4Switch;
     }
 }
