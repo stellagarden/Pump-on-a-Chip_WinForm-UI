@@ -31,6 +31,9 @@ namespace Pump_on_a_Chip
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
             globalTimer.Start();
             userModeForm.TopLevel = false;
             userModeForm.FormBorderStyle = FormBorderStyle.None;
@@ -155,6 +158,7 @@ namespace Pump_on_a_Chip
         }
         public void changeToAdmin()
         {
+            this.BackColor = Color.FromArgb(27, 34, 43);
             adminModeForm.TopLevel = false;
             adminModeForm.FormBorderStyle = FormBorderStyle.None;
             this.desktopPanel.Controls.Add(adminModeForm);
@@ -170,6 +174,7 @@ namespace Pump_on_a_Chip
 
         public void changeToUser()
         {
+            this.BackColor = Color.FromArgb(225, 225, 225);
             userModeForm.TopLevel = false;
             userModeForm.FormBorderStyle = FormBorderStyle.None;
             this.desktopPanel.Controls.Add(userModeForm);
