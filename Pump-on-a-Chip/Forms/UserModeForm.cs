@@ -1,6 +1,4 @@
-﻿using MaterialSkin;
-using MaterialSkin.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,9 +20,6 @@ namespace Pump_on_a_Chip.Forms
         public UserModeForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.LightBlue100, TextShade.WHITE);
         }
 
         private void UserModeForm_Load(object sender, EventArgs e)
@@ -42,9 +37,10 @@ namespace Pump_on_a_Chip.Forms
             startButton.BackColor = Color.FromArgb(213, 213, 213);
             startButton.ForeColor = Color.FromArgb(166, 166, 166);
             pCellTargetTextLabel.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellTargetLabel.Text = (200 + 2 * pCellSlider.Value).ToString() + " mbar";
+            Global.cellP_target = pCellTrackBar.Value;
+            pCellTargetLabel.Text = Global.cellP_target.ToString() + " mbar";
             pCellTargetLabel.ForeColor = Color.FromArgb(166, 166, 166);
-            pCellSlider.Enabled = false;
+            pCellTrackBar.Enabled = false;
             adminModeButton.Enabled = false;
         }
 
@@ -60,7 +56,7 @@ namespace Pump_on_a_Chip.Forms
             startButton.ForeColor = Color.FromArgb(126, 85, 2);
             pCellTargetTextLabel.ForeColor = Color.FromArgb(126, 85, 2);
             pCellTargetLabel.ForeColor = Color.FromArgb(126, 85, 2);
-            pCellSlider.Enabled = true;
+            pCellTrackBar.Enabled = true;
             adminModeButton.Enabled = true;
         }
 
@@ -68,10 +64,13 @@ namespace Pump_on_a_Chip.Forms
         private void pCellSlider_onValueChanged(object sender, int newValue)
         {
             // Slider value's range: 200 ~ 400 mbar
-            Global.cellP_target = 200 + 2 * pCellSlider.Value;
-            pCellTargetLabel.Text = Global.cellP_target.ToString() + " mbar";
         }
 
+        private void pCellTrackBar_Scroll(object sender, EventArgs e)
+        {
+            Global.cellP_target = pCellTrackBar.Value;
+            pCellTargetLabel.Text = Global.cellP_target.ToString() + " mbar";
+        }
         private void sampSerialWrite(string args)
         {
             mainForm.samp_serial.Write(args);
@@ -101,7 +100,7 @@ namespace Pump_on_a_Chip.Forms
             startButton.ForeColor = Color.FromArgb(166, 166, 166);
             pCellTargetTextLabel.ForeColor = Color.FromArgb(0, 48, 73);
             pCellTargetLabel.ForeColor = Color.FromArgb(0, 48, 73);
-            pCellSlider.Enabled = false;
+            pCellTrackBar.Enabled = false;
             adminModeButton.Enabled = false;
         }
 
@@ -115,5 +114,6 @@ namespace Pump_on_a_Chip.Forms
         {
             mainForm.changeToAdmin();
         }
+
     }
 }

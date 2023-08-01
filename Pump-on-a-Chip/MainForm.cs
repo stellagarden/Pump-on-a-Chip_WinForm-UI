@@ -82,8 +82,8 @@ namespace Pump_on_a_Chip
         private void main_serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string data = main_serial.ReadLine();
-            this.Invoke(new serialDelegate(mainDataProcess), data);
-        }
+            this.Invoke(new serialDelegate(mainDataProcess), data)
+                ;       }
 
         private void mainSerialWrite(string args)
         {

@@ -45,7 +45,7 @@ namespace Pump_on_a_Chip.Forms
             sampSerialWrite("U");
             pinch1Switch.Checked = false;
             pinch2Switch.Checked = false;
-            pinch3CellRadio.Checked = false;
+            pinch3CellWasteRadio.Checked = true;
             pump2Switch.Checked = false;
             sol4Switch.Checked = false;
             mainForm.changeToUser();

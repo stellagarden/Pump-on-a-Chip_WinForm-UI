@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pCellSlider = new MaterialSkin.Controls.MaterialSlider();
             this.adminModeButton = new System.Windows.Forms.Button();
             this.pCellTargetLabel = new System.Windows.Forms.Label();
             this.pCellTargetTextLabel = new System.Windows.Forms.Label();
@@ -47,21 +46,10 @@
             this.roundControl3 = new Pump_on_a_Chip.RoundControl();
             this.roundControl2 = new Pump_on_a_Chip.RoundControl();
             this.roundControl1 = new Pump_on_a_Chip.RoundControl();
+            this.pCellTrackBar = new System.Windows.Forms.TrackBar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pCellTrackBar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pCellSlider
-            // 
-            this.pCellSlider.Depth = 0;
-            this.pCellSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pCellSlider.Location = new System.Drawing.Point(6, 798);
-            this.pCellSlider.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pCellSlider.Name = "pCellSlider";
-            this.pCellSlider.ShowText = false;
-            this.pCellSlider.ShowValue = false;
-            this.pCellSlider.Size = new System.Drawing.Size(570, 40);
-            this.pCellSlider.TabIndex = 36;
-            this.pCellSlider.Text = "";
-            this.pCellSlider.onValueChanged += new MaterialSkin.Controls.MaterialSlider.ValueChanged(this.pCellSlider_onValueChanged);
             // 
             // adminModeButton
             // 
@@ -260,6 +248,25 @@
             this.roundControl1.Size = new System.Drawing.Size(568, 173);
             this.roundControl1.TabIndex = 23;
             // 
+            // pCellTrackBar
+            // 
+            this.pCellTrackBar.LargeChange = 10;
+            this.pCellTrackBar.Location = new System.Drawing.Point(19, 800);
+            this.pCellTrackBar.Maximum = 400;
+            this.pCellTrackBar.Minimum = 200;
+            this.pCellTrackBar.Name = "pCellTrackBar";
+            this.pCellTrackBar.Size = new System.Drawing.Size(548, 45);
+            this.pCellTrackBar.TabIndex = 40;
+            this.pCellTrackBar.Value = 300;
+            this.pCellTrackBar.Scroll += new System.EventHandler(this.pCellTrackBar_Scroll);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(22, 822);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(542, 23);
+            this.panel1.TabIndex = 41;
+            // 
             // UserModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
@@ -267,7 +274,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(584, 943);
             this.ControlBox = false;
-            this.Controls.Add(this.pCellSlider);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pCellTrackBar);
             this.Controls.Add(this.adminModeButton);
             this.Controls.Add(this.pCellTargetLabel);
             this.Controls.Add(this.pCellTargetTextLabel);
@@ -290,6 +298,7 @@
             this.ShowIcon = false;
             this.Text = "UserModeForm";
             this.Load += new System.EventHandler(this.UserModeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pCellTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,12 +316,13 @@
         private System.Windows.Forms.Label operatingTimeLabel;
         private System.Windows.Forms.Label operatingTimeTextLabel;
         private RoundControl roundControl1;
-        private MaterialSkin.Controls.MaterialSlider pCellSlider;
         private System.Windows.Forms.Button adminModeButton;
         private System.Windows.Forms.Label pCellTargetLabel;
         private System.Windows.Forms.Label pCellTargetTextLabel;
         private RoundButton startButton;
         public System.Windows.Forms.Label pCellLabel;
         public System.Windows.Forms.Label flowrateLabel;
+        private System.Windows.Forms.TrackBar pCellTrackBar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
