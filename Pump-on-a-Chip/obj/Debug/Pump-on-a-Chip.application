@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Pump-on-a-Chip.exe.manifest" size="4136">
+    <dependentAssembly dependencyType="install" codebase="Pump-on-a-Chip.exe.manifest" size="3492">
       <assemblyIdentity name="Pump-on-a-Chip.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5M8KWMZISxP2oaEhpbc4OhP+UDMnSLwLhlohk3iNu5Y=</dsig:DigestValue>
+        <dsig:DigestValue>xRNgsJRrJkVrVd+1ZEMHXUnRKVMmBK5EshpX2E3Sx2k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

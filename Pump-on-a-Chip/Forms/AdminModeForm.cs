@@ -1,5 +1,4 @@
-﻿using MaterialSkin;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +13,14 @@ namespace Pump_on_a_Chip.Forms
     public partial class AdminModeForm : Form
     {
         public static MainForm mainForm;
+        bool flag_pump2 = false;
+        bool flag_pinch1 = false;
+        bool flag_pinch2 = false;
+        bool flag_sol4 = false;
 
         public AdminModeForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
         }
 
         private void AdminModeForm_Load(object sender, EventArgs e)
@@ -43,18 +44,21 @@ namespace Pump_on_a_Chip.Forms
         {
             mainSerialWrite("T"+ Global.resP_target.ToString());
             sampSerialWrite("U");
-            pinch1Switch.Checked = false;
-            pinch2Switch.Checked = false;
-            pinch3CellWasteRadio.Checked = true;
-            pump2Switch.Checked = false;
-            sol4Switch.Checked = false;
+            flag_sol4 = false;
+            sol4Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
+            flag_pump2 = false;
+            pump2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
+            flag_pinch1 = false;
+            pinch1Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
+            flag_pinch2 = false;
+            pinch2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
+            cellWasteRadio.Checked = true;
             mainForm.changeToUser();
         }
 
-        private void pPressureSlider_onValueChanged(object sender, int newValue)
+        private void resPTargetTrackBar_Scroll(object sender, EventArgs e)
         {
-            // Slider value's range: 1000 ~ 3000 mbar
-            Global.resP_target = 1000 + 20 * resPTargetSlider.Value;
+            Global.resP_target = resPTargetTrackBar.Value;
             resPTargetLabel.Text = Global.resP_target.ToString() + " mbar";
         }
         private void runPumpLabel_Click(object sender, EventArgs e)
@@ -94,62 +98,79 @@ namespace Pump_on_a_Chip.Forms
             mainSerialWrite("V" + Global.prop_valve_target.ToString());
         }
 
-        private void pinch1Switch_CheckedChanged(object sender, EventArgs e)
+        private void sol4Tog_Click(object sender, EventArgs e)
         {
-            if (pinch1Switch.Checked)
+            if (flag_sol4)
             {
-                sampSerialWrite("1O");
+                flag_sol4 = false;
+                mainSerialWrite("OX");
+                sol4Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
             }
             else
             {
-                sampSerialWrite("1X");
+                flag_sol4 = true;
+                mainSerialWrite("OO");
+                sol4Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_on;
             }
         }
 
-        private void pinch2Switch_CheckedChanged(object sender, EventArgs e)
+        private void pump2Tog_Click(object sender, EventArgs e)
         {
-            if (pinch2Switch.Checked)
+            if (flag_pump2)
             {
-                sampSerialWrite("2O");
+                flag_pump2 = false;
+                sampSerialWrite("PX");
+                pump2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
             }
             else
             {
-                sampSerialWrite("2X");
+                flag_pump2 = true;
+                sampSerialWrite("PO");
+                pump2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_on;
             }
         }
-        private void pinch3CellRadio_CheckedChanged(object sender, EventArgs e)
+
+        private void pinch1Tog_Click(object sender, EventArgs e)
         {
-            if (pinch3CellRadio.Checked)
+            if (flag_pinch1)
             {
-                sampSerialWrite("3O");
+                flag_pinch1 = false;
+                sampSerialWrite("1X");
+                pinch1Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
             }
             else
+            {
+                flag_pinch1 = true;
+                sampSerialWrite("1O");
+                pinch1Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_on;
+            }
+        }
+
+        private void pinch2Tog_Click(object sender, EventArgs e)
+        {
+            if (flag_pinch2)
+            {
+                flag_pinch2 = false;
+                sampSerialWrite("2X");
+                pinch2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_off;
+            }
+            else
+            {
+                flag_pinch2 = true;
+                sampSerialWrite("2O");
+                pinch2Tog.Image = Pump_on_a_Chip.Properties.Resources.tog_on;
+            }
+        }
+
+        private void cellWasteRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cellWasteRadio.Checked)
             {
                 sampSerialWrite("3X");
             }
-        }
-
-        private void pump2Switch_CheckedChanged(object sender, EventArgs e)
-        {
-            if (pump2Switch.Checked)
-            {
-                sampSerialWrite("PO");
-            }
             else
             {
-                sampSerialWrite("PX");
-            }
-        }
-
-        private void sol4Switch_CheckedChanged(object sender, EventArgs e)
-        {
-            if (sol4Switch.Checked)
-            {
-                mainSerialWrite("OO");
-            }
-            else
-            {
-                mainSerialWrite("OX");
+                sampSerialWrite("3O");
             }
         }
     }

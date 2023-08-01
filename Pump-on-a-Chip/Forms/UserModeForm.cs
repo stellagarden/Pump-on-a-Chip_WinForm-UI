@@ -60,12 +60,6 @@ namespace Pump_on_a_Chip.Forms
             adminModeButton.Enabled = true;
         }
 
-
-        private void pCellSlider_onValueChanged(object sender, int newValue)
-        {
-            // Slider value's range: 200 ~ 400 mbar
-        }
-
         private void pCellTrackBar_Scroll(object sender, EventArgs e)
         {
             Global.cellP_target = pCellTrackBar.Value;

@@ -42,26 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialSkin.dll" size="6742528">
-      <assemblyIdentity name="MaterialSkin" version="2.3.1.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PwdVUuKeWHNv+W4AyCippMsowWM3dEtpxRFBlq141Z4=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pump-on-a-Chip.exe" size="77288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pump-on-a-Chip.exe" size="78824">
       <assemblyIdentity name="Pump-on-a-Chip" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6+dHeyxF2nVpe6EUM1e0pfQXR8tz9Lnretm9Tcj5/oQ=</dsig:DigestValue>
+        <dsig:DigestValue>+3ecD+dEnIFrM4puXP/+KaumnfXrPRMRyS6vi+yS0q4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

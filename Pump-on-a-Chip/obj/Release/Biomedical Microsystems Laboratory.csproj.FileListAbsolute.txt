@@ -1,0 +1,18 @@
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Release\Pump-on-a-Chip.exe.config
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Release\Pump-on-a-Chip.exe.manifest
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Release\Pump-on-a-Chip.application
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Release\Pump-on-a-Chip.exe
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\bin\Release\Pump-on-a-Chip.pdb
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Biomedical Microsystems Laboratory.csproj.AssemblyReference.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Biomedical Microsystems Laboratory.csproj.SuggestedBindingRedirects.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump_on_a_Chip.Forms.AdminModeForm.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump_on_a_Chip.Forms.UserModeForm.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump_on_a_Chip.MainForm.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump_on_a_Chip.Properties.Resources.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump_on_a_Chip.RoundControl.resources
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Biomedical Microsystems Laboratory.csproj.GenerateResource.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Biomedical Microsystems Laboratory.csproj.CoreCompileInputs.cache
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump-on-a-Chip.exe.manifest
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump-on-a-Chip.application
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump-on-a-Chip.exe
+E:\Users\Stella\Documents\Visual Studio 2022\Projects\Pump-on-a-Chip\Pump-on-a-Chip\obj\Release\Pump-on-a-Chip.pdb

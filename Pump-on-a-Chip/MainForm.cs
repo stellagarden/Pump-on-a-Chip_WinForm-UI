@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using System.IO.Ports;
 using Pump_on_a_Chip.Forms;
 using System.Xml.Linq;
@@ -27,8 +25,6 @@ namespace Pump_on_a_Chip
         public MainForm()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow800, Primary.Yellow900, Primary.Yellow500, Accent.Yellow700, TextShade.WHITE);
             UserModeForm.mainForm = this;
             AdminModeForm.mainForm = this;
         }
@@ -82,8 +78,8 @@ namespace Pump_on_a_Chip
         private void main_serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string data = main_serial.ReadLine();
-            this.Invoke(new serialDelegate(mainDataProcess), data)
-                ;       }
+            this.Invoke(new serialDelegate(mainDataProcess), data);
+        }
 
         private void mainSerialWrite(string args)
         {

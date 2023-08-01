@@ -37,7 +37,6 @@
             this.atPLabel = new System.Windows.Forms.Label();
             this.flowrateLabel = new System.Windows.Forms.Label();
             this.userModeButton = new System.Windows.Forms.Button();
-            this.resPTargetSlider = new MaterialSkin.Controls.MaterialSlider();
             this.resPTargetLabel = new System.Windows.Forms.Label();
             this.resPTargetTextLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,15 +51,7 @@
             this.propTargetLabel = new System.Windows.Forms.Label();
             this.propValveSetLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.propDecLabel = new System.Windows.Forms.Label();
-            this.propIncLabel = new System.Windows.Forms.Label();
-            this.pinch1Switch = new MaterialSkin.Controls.MaterialSwitch();
-            this.pinch2Switch = new MaterialSkin.Controls.MaterialSwitch();
-            this.pump2Switch = new MaterialSkin.Controls.MaterialSwitch();
-            this.pinch3CellWasteRadio = new MaterialSkin.Controls.MaterialRadioButton();
-            this.pinch3CellRadio = new MaterialSkin.Controls.MaterialRadioButton();
             this.pinch3TextLabel = new System.Windows.Forms.Label();
-            this.sol4Switch = new MaterialSkin.Controls.MaterialSwitch();
             this.roundControl8 = new Pump_on_a_Chip.RoundControl();
             this.propValveSetButton = new Pump_on_a_Chip.RoundControl();
             this.runPumpButton = new Pump_on_a_Chip.RoundControl();
@@ -73,6 +64,20 @@
             this.roundControl4 = new Pump_on_a_Chip.RoundControl();
             this.roundControl3 = new Pump_on_a_Chip.RoundControl();
             this.roundControl1 = new Pump_on_a_Chip.RoundControl();
+            this.resPTargetTrackBar = new System.Windows.Forms.TrackBar();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.sol4Tog = new System.Windows.Forms.Label();
+            this.propDecLabel = new System.Windows.Forms.Label();
+            this.propIncLabel = new System.Windows.Forms.Label();
+            this.pump2Tog = new System.Windows.Forms.Label();
+            this.pinch1Tog = new System.Windows.Forms.Label();
+            this.pinch2Tog = new System.Windows.Forms.Label();
+            this.roundControl7 = new Pump_on_a_Chip.RoundControl();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.roundControl9 = new Pump_on_a_Chip.RoundControl();
+            this.cellWasteRadio = new System.Windows.Forms.RadioButton();
+            this.cellRadio = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.resPTargetTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // resPTextLabel
@@ -182,21 +187,6 @@
             this.userModeButton.UseVisualStyleBackColor = true;
             this.userModeButton.Click += new System.EventHandler(this.userModeButton_Click);
             // 
-            // resPTargetSlider
-            // 
-            this.resPTargetSlider.Depth = 0;
-            this.resPTargetSlider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resPTargetSlider.Location = new System.Drawing.Point(5, 381);
-            this.resPTargetSlider.MouseState = MaterialSkin.MouseState.HOVER;
-            this.resPTargetSlider.Name = "resPTargetSlider";
-            this.resPTargetSlider.ShowText = false;
-            this.resPTargetSlider.ShowValue = false;
-            this.resPTargetSlider.Size = new System.Drawing.Size(570, 40);
-            this.resPTargetSlider.TabIndex = 41;
-            this.resPTargetSlider.Text = "";
-            this.resPTargetSlider.Value = 0;
-            this.resPTargetSlider.onValueChanged += new MaterialSkin.Controls.MaterialSlider.ValueChanged(this.pPressureSlider_onValueChanged);
-            // 
             // resPTargetLabel
             // 
             this.resPTargetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
@@ -232,9 +222,9 @@
             // propValveTextLabel
             // 
             this.propValveTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.propValveTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propValveTextLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propValveTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
-            this.propValveTextLabel.Location = new System.Drawing.Point(44, 437);
+            this.propValveTextLabel.Location = new System.Drawing.Point(44, 438);
             this.propValveTextLabel.Name = "propValveTextLabel";
             this.propValveTextLabel.Size = new System.Drawing.Size(213, 38);
             this.propValveTextLabel.TabIndex = 47;
@@ -244,7 +234,7 @@
             // ventPressureReservoirLabel
             // 
             this.ventPressureReservoirLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.ventPressureReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.ventPressureReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.ventPressureReservoirLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             this.ventPressureReservoirLabel.Location = new System.Drawing.Point(306, 439);
             this.ventPressureReservoirLabel.Name = "ventPressureReservoirLabel";
@@ -257,7 +247,7 @@
             // ventCellReservoirLabel
             // 
             this.ventCellReservoirLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.ventCellReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.ventCellReservoirLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.ventCellReservoirLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             this.ventCellReservoirLabel.Location = new System.Drawing.Point(446, 439);
             this.ventCellReservoirLabel.Name = "ventCellReservoirLabel";
@@ -296,7 +286,7 @@
             // propCurrentTextLabel
             // 
             this.propCurrentTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propCurrentTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propCurrentTextLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propCurrentTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.propCurrentTextLabel.Location = new System.Drawing.Point(32, 495);
             this.propCurrentTextLabel.Name = "propCurrentTextLabel";
@@ -308,7 +298,7 @@
             // propTargetTextLabel
             // 
             this.propTargetTextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propTargetTextLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propTargetTextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.propTargetTextLabel.Location = new System.Drawing.Point(32, 530);
             this.propTargetTextLabel.Name = "propTargetTextLabel";
@@ -320,7 +310,7 @@
             // propCurrentLabel
             // 
             this.propCurrentLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propCurrentLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propCurrentLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propCurrentLabel.ForeColor = System.Drawing.Color.White;
             this.propCurrentLabel.Location = new System.Drawing.Point(188, 495);
             this.propCurrentLabel.Name = "propCurrentLabel";
@@ -332,7 +322,7 @@
             // propTargetLabel
             // 
             this.propTargetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
-            this.propTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propTargetLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propTargetLabel.ForeColor = System.Drawing.Color.White;
             this.propTargetLabel.Location = new System.Drawing.Point(188, 530);
             this.propTargetLabel.Name = "propTargetLabel";
@@ -344,7 +334,7 @@
             // propValveSetLabel
             // 
             this.propValveSetLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
-            this.propValveSetLabel.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.propValveSetLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
             this.propValveSetLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
             this.propValveSetLabel.Location = new System.Drawing.Point(195, 584);
             this.propValveSetLabel.Name = "propValveSetLabel";
@@ -362,140 +352,17 @@
             this.panel2.Size = new System.Drawing.Size(2, 60);
             this.panel2.TabIndex = 58;
             // 
-            // propDecLabel
-            // 
-            this.propDecLabel.Image = global::Pump_on_a_Chip.Properties.Resources.dec2;
-            this.propDecLabel.Location = new System.Drawing.Point(107, 582);
-            this.propDecLabel.Name = "propDecLabel";
-            this.propDecLabel.Size = new System.Drawing.Size(58, 70);
-            this.propDecLabel.TabIndex = 59;
-            this.propDecLabel.Click += new System.EventHandler(this.propDecLabel_Click);
-            // 
-            // propIncLabel
-            // 
-            this.propIncLabel.Image = global::Pump_on_a_Chip.Properties.Resources.inc2;
-            this.propIncLabel.Location = new System.Drawing.Point(43, 582);
-            this.propIncLabel.Name = "propIncLabel";
-            this.propIncLabel.Size = new System.Drawing.Size(58, 70);
-            this.propIncLabel.TabIndex = 59;
-            this.propIncLabel.Click += new System.EventHandler(this.propIncLabel_Click);
-            // 
-            // pinch1Switch
-            // 
-            this.pinch1Switch.AutoSize = true;
-            this.pinch1Switch.Depth = 0;
-            this.pinch1Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
-            this.pinch1Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch1Switch.Location = new System.Drawing.Point(26, 781);
-            this.pinch1Switch.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch1Switch.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch1Switch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch1Switch.Name = "pinch1Switch";
-            this.pinch1Switch.Ripple = true;
-            this.pinch1Switch.Size = new System.Drawing.Size(154, 37);
-            this.pinch1Switch.TabIndex = 60;
-            this.pinch1Switch.Text = "Pinch Valve 1";
-            this.pinch1Switch.UseVisualStyleBackColor = true;
-            this.pinch1Switch.CheckedChanged += new System.EventHandler(this.pinch1Switch_CheckedChanged);
-            // 
-            // pinch2Switch
-            // 
-            this.pinch2Switch.AutoSize = true;
-            this.pinch2Switch.Depth = 0;
-            this.pinch2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
-            this.pinch2Switch.ForeColor = System.Drawing.Color.White;
-            this.pinch2Switch.Location = new System.Drawing.Point(26, 822);
-            this.pinch2Switch.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch2Switch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch2Switch.Name = "pinch2Switch";
-            this.pinch2Switch.Ripple = true;
-            this.pinch2Switch.Size = new System.Drawing.Size(154, 37);
-            this.pinch2Switch.TabIndex = 61;
-            this.pinch2Switch.Text = "Pinch Valve 2";
-            this.pinch2Switch.UseVisualStyleBackColor = true;
-            this.pinch2Switch.CheckedChanged += new System.EventHandler(this.pinch2Switch_CheckedChanged);
-            // 
-            // pump2Switch
-            // 
-            this.pump2Switch.AutoSize = true;
-            this.pump2Switch.Depth = 0;
-            this.pump2Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
-            this.pump2Switch.ForeColor = System.Drawing.Color.White;
-            this.pump2Switch.Location = new System.Drawing.Point(27, 738);
-            this.pump2Switch.Margin = new System.Windows.Forms.Padding(0);
-            this.pump2Switch.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pump2Switch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pump2Switch.Name = "pump2Switch";
-            this.pump2Switch.Ripple = true;
-            this.pump2Switch.Size = new System.Drawing.Size(202, 37);
-            this.pump2Switch.TabIndex = 63;
-            this.pump2Switch.Text = "Cell Sampling Pump";
-            this.pump2Switch.UseVisualStyleBackColor = true;
-            this.pump2Switch.CheckedChanged += new System.EventHandler(this.pump2Switch_CheckedChanged);
-            // 
-            // pinch3CellWasteRadio
-            // 
-            this.pinch3CellWasteRadio.AutoSize = true;
-            this.pinch3CellWasteRadio.Checked = true;
-            this.pinch3CellWasteRadio.Depth = 0;
-            this.pinch3CellWasteRadio.Location = new System.Drawing.Point(334, 769);
-            this.pinch3CellWasteRadio.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch3CellWasteRadio.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch3CellWasteRadio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch3CellWasteRadio.Name = "pinch3CellWasteRadio";
-            this.pinch3CellWasteRadio.Ripple = true;
-            this.pinch3CellWasteRadio.Size = new System.Drawing.Size(178, 37);
-            this.pinch3CellWasteRadio.TabIndex = 64;
-            this.pinch3CellWasteRadio.TabStop = true;
-            this.pinch3CellWasteRadio.Text = "Cell Waste Reservoir";
-            this.pinch3CellWasteRadio.UseVisualStyleBackColor = true;
-            // 
-            // pinch3CellRadio
-            // 
-            this.pinch3CellRadio.AutoSize = true;
-            this.pinch3CellRadio.Depth = 0;
-            this.pinch3CellRadio.Location = new System.Drawing.Point(334, 806);
-            this.pinch3CellRadio.Margin = new System.Windows.Forms.Padding(0);
-            this.pinch3CellRadio.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.pinch3CellRadio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.pinch3CellRadio.Name = "pinch3CellRadio";
-            this.pinch3CellRadio.Ripple = true;
-            this.pinch3CellRadio.Size = new System.Drawing.Size(130, 37);
-            this.pinch3CellRadio.TabIndex = 65;
-            this.pinch3CellRadio.TabStop = true;
-            this.pinch3CellRadio.Text = "Cell Reservoir";
-            this.pinch3CellRadio.UseVisualStyleBackColor = true;
-            this.pinch3CellRadio.CheckedChanged += new System.EventHandler(this.pinch3CellRadio_CheckedChanged);
-            // 
             // pinch3TextLabel
             // 
             this.pinch3TextLabel.AutoSize = true;
-            this.pinch3TextLabel.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.pinch3TextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(198)))));
-            this.pinch3TextLabel.Location = new System.Drawing.Point(372, 740);
+            this.pinch3TextLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
+            this.pinch3TextLabel.Font = new System.Drawing.Font("Bahnschrift", 15F);
+            this.pinch3TextLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(42)))), ((int)(((byte)(53)))));
+            this.pinch3TextLabel.Location = new System.Drawing.Point(367, 711);
             this.pinch3TextLabel.Name = "pinch3TextLabel";
-            this.pinch3TextLabel.Size = new System.Drawing.Size(125, 23);
+            this.pinch3TextLabel.Size = new System.Drawing.Size(130, 24);
             this.pinch3TextLabel.TabIndex = 66;
             this.pinch3TextLabel.Text = "Pinch Valve 3";
-            // 
-            // sol4Switch
-            // 
-            this.sol4Switch.AutoSize = true;
-            this.sol4Switch.Depth = 0;
-            this.sol4Switch.Font = new System.Drawing.Font("Bahnschrift", 24F);
-            this.sol4Switch.ForeColor = System.Drawing.Color.White;
-            this.sol4Switch.Location = new System.Drawing.Point(26, 695);
-            this.sol4Switch.Margin = new System.Windows.Forms.Padding(0);
-            this.sol4Switch.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.sol4Switch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.sol4Switch.Name = "sol4Switch";
-            this.sol4Switch.Ripple = true;
-            this.sol4Switch.Size = new System.Drawing.Size(358, 37);
-            this.sol4Switch.TabIndex = 67;
-            this.sol4Switch.Text = "Block Pressure Supply to the Cell Reservoir";
-            this.sol4Switch.UseVisualStyleBackColor = true;
-            this.sol4Switch.CheckedChanged += new System.EventHandler(this.sol4Switch_CheckedChanged);
             // 
             // roundControl8
             // 
@@ -653,19 +520,179 @@
             this.roundControl1.Size = new System.Drawing.Size(281, 140);
             this.roundControl1.TabIndex = 0;
             // 
+            // resPTargetTrackBar
+            // 
+            this.resPTargetTrackBar.LargeChange = 50;
+            this.resPTargetTrackBar.Location = new System.Drawing.Point(13, 389);
+            this.resPTargetTrackBar.Maximum = 2000;
+            this.resPTargetTrackBar.Minimum = 500;
+            this.resPTargetTrackBar.Name = "resPTargetTrackBar";
+            this.resPTargetTrackBar.Size = new System.Drawing.Size(551, 45);
+            this.resPTargetTrackBar.TabIndex = 68;
+            this.resPTargetTrackBar.Value = 1000;
+            this.resPTargetTrackBar.Scroll += new System.EventHandler(this.resPTargetTrackBar_Scroll);
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(20, 411);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(544, 11);
+            this.panel3.TabIndex = 69;
+            // 
+            // sol4Tog
+            // 
+            this.sol4Tog.Font = new System.Drawing.Font("Bahnschrift", 11F);
+            this.sol4Tog.ForeColor = System.Drawing.Color.White;
+            this.sol4Tog.Image = global::Pump_on_a_Chip.Properties.Resources.tog_off;
+            this.sol4Tog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sol4Tog.Location = new System.Drawing.Point(36, 696);
+            this.sol4Tog.Name = "sol4Tog";
+            this.sol4Tog.Size = new System.Drawing.Size(234, 30);
+            this.sol4Tog.TabIndex = 70;
+            this.sol4Tog.Text = "Block Between Reservoirs";
+            this.sol4Tog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sol4Tog.Click += new System.EventHandler(this.sol4Tog_Click);
+            // 
+            // propDecLabel
+            // 
+            this.propDecLabel.Image = global::Pump_on_a_Chip.Properties.Resources.dec2;
+            this.propDecLabel.Location = new System.Drawing.Point(107, 582);
+            this.propDecLabel.Name = "propDecLabel";
+            this.propDecLabel.Size = new System.Drawing.Size(58, 70);
+            this.propDecLabel.TabIndex = 59;
+            this.propDecLabel.Click += new System.EventHandler(this.propDecLabel_Click);
+            // 
+            // propIncLabel
+            // 
+            this.propIncLabel.Image = global::Pump_on_a_Chip.Properties.Resources.inc2;
+            this.propIncLabel.Location = new System.Drawing.Point(43, 582);
+            this.propIncLabel.Name = "propIncLabel";
+            this.propIncLabel.Size = new System.Drawing.Size(58, 70);
+            this.propIncLabel.TabIndex = 59;
+            this.propIncLabel.Click += new System.EventHandler(this.propIncLabel_Click);
+            // 
+            // pump2Tog
+            // 
+            this.pump2Tog.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.pump2Tog.ForeColor = System.Drawing.Color.White;
+            this.pump2Tog.Image = global::Pump_on_a_Chip.Properties.Resources.tog_off;
+            this.pump2Tog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pump2Tog.Location = new System.Drawing.Point(36, 732);
+            this.pump2Tog.Name = "pump2Tog";
+            this.pump2Tog.Size = new System.Drawing.Size(230, 30);
+            this.pump2Tog.TabIndex = 71;
+            this.pump2Tog.Text = "Cell Sampling Pump";
+            this.pump2Tog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pump2Tog.Click += new System.EventHandler(this.pump2Tog_Click);
+            // 
+            // pinch1Tog
+            // 
+            this.pinch1Tog.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.pinch1Tog.ForeColor = System.Drawing.Color.White;
+            this.pinch1Tog.Image = global::Pump_on_a_Chip.Properties.Resources.tog_off;
+            this.pinch1Tog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pinch1Tog.Location = new System.Drawing.Point(36, 770);
+            this.pinch1Tog.Name = "pinch1Tog";
+            this.pinch1Tog.Size = new System.Drawing.Size(168, 30);
+            this.pinch1Tog.TabIndex = 72;
+            this.pinch1Tog.Text = "Pinch Valve 1";
+            this.pinch1Tog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pinch1Tog.Click += new System.EventHandler(this.pinch1Tog_Click);
+            // 
+            // pinch2Tog
+            // 
+            this.pinch2Tog.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.pinch2Tog.ForeColor = System.Drawing.Color.White;
+            this.pinch2Tog.Image = global::Pump_on_a_Chip.Properties.Resources.tog_off;
+            this.pinch2Tog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pinch2Tog.Location = new System.Drawing.Point(36, 807);
+            this.pinch2Tog.Name = "pinch2Tog";
+            this.pinch2Tog.Size = new System.Drawing.Size(171, 30);
+            this.pinch2Tog.TabIndex = 73;
+            this.pinch2Tog.Text = "Pinch Valve 2";
+            this.pinch2Tog.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pinch2Tog.Click += new System.EventHandler(this.pinch2Tog_Click);
+            // 
+            // roundControl7
+            // 
+            this.roundControl7.BackColor = System.Drawing.Color.Transparent;
+            this.roundControl7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
+            this.roundControl7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(191)))), ((int)(((byte)(73)))));
+            this.roundControl7.BorderWidth = 0F;
+            this.roundControl7.Location = new System.Drawing.Point(291, 687);
+            this.roundControl7.Margin = new System.Windows.Forms.Padding(868, 6927, 868, 6927);
+            this.roundControl7.Name = "roundControl7";
+            this.roundControl7.Radius = 20;
+            this.roundControl7.Size = new System.Drawing.Size(281, 170);
+            this.roundControl7.TabIndex = 74;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
+            this.panel4.Location = new System.Drawing.Point(301, 744);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(262, 37);
+            this.panel4.TabIndex = 47;
+            // 
+            // roundControl9
+            // 
+            this.roundControl9.BackColor = System.Drawing.Color.Transparent;
+            this.roundControl9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
+            this.roundControl9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
+            this.roundControl9.BorderWidth = 0F;
+            this.roundControl9.Location = new System.Drawing.Point(291, 744);
+            this.roundControl9.Margin = new System.Windows.Forms.Padding(88, 333, 88, 333);
+            this.roundControl9.Name = "roundControl9";
+            this.roundControl9.Radius = 20;
+            this.roundControl9.Size = new System.Drawing.Size(281, 113);
+            this.roundControl9.TabIndex = 75;
+            // 
+            // cellWasteRadio
+            // 
+            this.cellWasteRadio.AutoSize = true;
+            this.cellWasteRadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
+            this.cellWasteRadio.Checked = true;
+            this.cellWasteRadio.Font = new System.Drawing.Font("Bahnschrift", 15F);
+            this.cellWasteRadio.ForeColor = System.Drawing.Color.White;
+            this.cellWasteRadio.Location = new System.Drawing.Point(327, 764);
+            this.cellWasteRadio.Name = "cellWasteRadio";
+            this.cellWasteRadio.Size = new System.Drawing.Size(218, 28);
+            this.cellWasteRadio.TabIndex = 76;
+            this.cellWasteRadio.TabStop = true;
+            this.cellWasteRadio.Text = "Cell Waste Reservoir";
+            this.cellWasteRadio.UseVisualStyleBackColor = false;
+            this.cellWasteRadio.CheckedChanged += new System.EventHandler(this.cellWasteRadio_CheckedChanged);
+            // 
+            // cellRadio
+            // 
+            this.cellRadio.AutoSize = true;
+            this.cellRadio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(57)))), ((int)(((byte)(71)))));
+            this.cellRadio.Font = new System.Drawing.Font("Bahnschrift", 15F);
+            this.cellRadio.ForeColor = System.Drawing.Color.White;
+            this.cellRadio.Location = new System.Drawing.Point(327, 798);
+            this.cellRadio.Name = "cellRadio";
+            this.cellRadio.Size = new System.Drawing.Size(157, 28);
+            this.cellRadio.TabIndex = 77;
+            this.cellRadio.Text = "Cell Reservoir";
+            this.cellRadio.UseVisualStyleBackColor = false;
+            // 
             // AdminModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(34)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(584, 943);
-            this.Controls.Add(this.sol4Switch);
+            this.Controls.Add(this.cellRadio);
+            this.Controls.Add(this.cellWasteRadio);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.roundControl9);
+            this.Controls.Add(this.pinch2Tog);
+            this.Controls.Add(this.pinch1Tog);
+            this.Controls.Add(this.pump2Tog);
+            this.Controls.Add(this.sol4Tog);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.resPTargetTrackBar);
             this.Controls.Add(this.pinch3TextLabel);
-            this.Controls.Add(this.pinch3CellRadio);
-            this.Controls.Add(this.pinch3CellWasteRadio);
-            this.Controls.Add(this.pump2Switch);
-            this.Controls.Add(this.pinch2Switch);
-            this.Controls.Add(this.pinch1Switch);
             this.Controls.Add(this.propDecLabel);
             this.Controls.Add(this.propIncLabel);
             this.Controls.Add(this.panel2);
@@ -688,7 +715,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.roundControl6);
             this.Controls.Add(this.roundControl5);
-            this.Controls.Add(this.resPTargetSlider);
             this.Controls.Add(this.resPTargetLabel);
             this.Controls.Add(this.resPTargetTextLabel);
             this.Controls.Add(this.userModeButton);
@@ -704,11 +730,13 @@
             this.Controls.Add(this.roundControl4);
             this.Controls.Add(this.roundControl3);
             this.Controls.Add(this.roundControl1);
+            this.Controls.Add(this.roundControl7);
             this.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "AdminModeForm";
             this.Text = "AdminModeForm";
             this.Load += new System.EventHandler(this.AdminModeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.resPTargetTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,7 +753,6 @@
         private System.Windows.Forms.Label atPTextLabel;
         private System.Windows.Forms.Label flowrateTextLabel;
         private System.Windows.Forms.Button userModeButton;
-        private MaterialSkin.Controls.MaterialSlider resPTargetSlider;
         private System.Windows.Forms.Label resPTargetLabel;
         private System.Windows.Forms.Label resPTargetTextLabel;
         private RoundControl roundControl5;
@@ -754,12 +781,17 @@
         public System.Windows.Forms.Label flowrateLabel;
         public System.Windows.Forms.Label propCurrentLabel;
         public System.Windows.Forms.Label propTargetLabel;
-        private MaterialSkin.Controls.MaterialSwitch pinch1Switch;
-        private MaterialSkin.Controls.MaterialSwitch pinch2Switch;
-        private MaterialSkin.Controls.MaterialSwitch pump2Switch;
-        private MaterialSkin.Controls.MaterialRadioButton pinch3CellWasteRadio;
-        private MaterialSkin.Controls.MaterialRadioButton pinch3CellRadio;
         private System.Windows.Forms.Label pinch3TextLabel;
-        private MaterialSkin.Controls.MaterialSwitch sol4Switch;
+        private System.Windows.Forms.TrackBar resPTargetTrackBar;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label sol4Tog;
+        private System.Windows.Forms.Label pump2Tog;
+        private System.Windows.Forms.Label pinch1Tog;
+        private System.Windows.Forms.Label pinch2Tog;
+        private RoundControl roundControl7;
+        private System.Windows.Forms.Panel panel4;
+        private RoundControl roundControl9;
+        private System.Windows.Forms.RadioButton cellWasteRadio;
+        private System.Windows.Forms.RadioButton cellRadio;
     }
 }
