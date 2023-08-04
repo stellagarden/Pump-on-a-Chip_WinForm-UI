@@ -41,10 +41,10 @@ namespace Pump_on_a_Chip
             this.desktopPanel.Tag = userModeForm;
             userModeForm.BringToFront();
             userModeForm.Show();
-            // Arduino
+            // Serial Connection with Microcontrollers
             try
             {
-                main_serial.PortName = "COM6";
+                main_serial.PortName = "COM6";  // Main System
                 main_serial.BaudRate = 9600;
                 main_serial.DtrEnable = true;
                 main_serial.Open();
@@ -58,7 +58,7 @@ namespace Pump_on_a_Chip
             }
             try
             {
-                samp_serial.PortName = "COM3";
+                samp_serial.PortName = "COM3";  // Cell Sampling System
                 samp_serial.BaudRate = 9600;
                 samp_serial.DtrEnable = true;
                 samp_serial.Open();
@@ -108,11 +108,11 @@ namespace Pump_on_a_Chip
                     adminModeForm.cellPLabel.Text = Global.cellP.ToString();
                     userModeForm.pCellLabel.Text = Global.cellP.ToString();
                     break;
-                //case 'F':
-                //    Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
-                //    adminModeForm.flowrateLabel.Text = Global.flowrate.ToString();
-                //    userModeForm.flowrateLabel.Text = Global.flowrate.ToString();
-                //    break;
+                case 'F':
+                    Global.flowrate = Convert.ToDouble(data.Substring(1, data.Length - 1));
+                    adminModeForm.flowrateLabel.Text = Global.flowrate.ToString();
+                    userModeForm.flowrateLabel.Text = Global.flowrate.ToString();
+                    break;
                 case 'V':
                     Console.Write("Received (main): " + data);
                     Global.prop_valve = Convert.ToInt32(data.Substring(1, data.Length - 1));
